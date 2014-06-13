@@ -1,0 +1,692 @@
+/*------------------------------------------------------*
+ *-------------- COLOR REFERENCE CHART -----------------*
+ *--- used in ------------ comment -------- colour -----* 
+
+   Theme main color      greenishBlue      #5A8FA8
+   Nav background        darkGray_0        #0E0E0E
+   Nav background        darkGray_1        #222
+   Header color          darkGray_2        #555
+   Text foreground       lightGray_0       #F0F0F0
+   Content bckgrnd       lightGray_1       #CCC
+   Content bckgrnd hover lightGray_2       #333
+*/
+
+
+/*------------------------------------------------------*
+ *---------------------- FONTS -------------------------*
+ *------------------------------------------------------*/
+
+/* Fuente PT SANS: Usado en toda la web */
+@font-face {
+    font-family: 'pt_sans';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/PT_Sans/PT_Sans.eot');
+    src: url('fonts/PT_Sans/PT_Sans.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PT_Sans/PT_Sans.woff') format('woff'),
+         url('fonts/PT_Sans/PT_Sans.ttf') format('truetype'),
+         url('fonts/PT_Sans/PT_Sans.svg#pt_sansregular') format('svg');
+}
+@font-face {
+    font-family: 'pt_sans_bold';
+	font-weight: bold;
+    src: url('fonts/PT_Sans/PT_Sans_bold.eot');
+    src: url('fonts/PT_Sans/PT_Sans_bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PT_Sans/PT_Sans_bold.woff') format('woff'),
+         url('fonts/PT_Sans/PT_Sans_bold.ttf') format('truetype'),
+         url('fonts/PT_Sans/PT_Sans_bold.svg#pt_sansbold') format('svg');
+}
+@font-face {
+    font-family: 'pt_sans_italic';
+	font-style: italic, oblique;
+    src: url('fonts/PT_Sans/PT_Sans_it.eot');
+    src: url('fonts/PT_Sans/PT_Sans_it.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PT_Sans/PT_Sans_it.woff') format('woff'),
+         url('fonts/PT_Sans/PT_Sans_it.ttf') format('truetype'),
+         url('fonts/PT_Sans/PT_Sans_it.svg#pt_sansitalic') format('svg');
+}
+@font-face {
+    font-family: 'pt_sans_bold_italic';
+    font-weight: bold;
+    font-style: italic, oblique;
+    src: url('fonts/PT_Sans/PT_Sans_bold_it.eot');
+    src: url('fonts/PT_Sans/PT_Sans_bold_it.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PT_Sans/PT_Sans_bold_it.woff') format('woff'),
+         url('fonts/PT_Sans/PT_Sans_bold_it.ttf') format('truetype'),
+         url('fonts/PT_Sans/PT_Sans_bold_it.svg#pt_sansbold_italic ') format('svg');
+}
+/* Fuente PT SANS CAPTION: Logotipo de la empresa */
+@font-face {
+    font-family: 'pt_sans_caption';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/PT_Sans_Caption/PT_Sans_Caption.eot');
+    src: url('fonts/PT_Sans_Caption/PT_Sans_Caption.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PT_Sans_Caption/PT_Sans_Caption.woff') format('woff'),
+         url('fonts/PT_Sans_Caption/PT_Sans_Caption.ttf') format('truetype'),
+         url('fonts/PT_Sans_Caption/PT_Sans_Caption.svg#pt_sans_captionregular') format('svg');
+}
+@font-face {
+    font-family: 'pt_sans_caption_bold';
+	font-weight: bold;
+    src: url('fonts/PT_Sans_Caption/PT_Sans_Caption_bold.eot');
+    src: url('fonts/PT_Sans_Caption/PT_Sans_Caption_bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/PT_Sans_Caption/PT_Sans_Caption_bold.woff') format('woff'),
+         url('fonts/PT_Sans_Caption/PT_Sans_Caption_bold.ttf') format('truetype'),
+         url('fonts/PT_Sans_Caption/PT_Sans_Caption_bold.svg#pt_sans_captionbold') format('svg');
+    
+}
+
+/*------------------------------------------------------*
+ *---------------- SITE PROPERTIES ---------------------*
+ *------------------------------------------------------*/
+html,body {
+	height: 100%;
+}
+
+body{
+    font-family: 'pt_sans';
+    font-size: 100%;
+    background: /* darkGray_0  */ #0E0E0E url("img/background.jpg") repeat-x 0 0;
+	width: 90%;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+
+a, button, input[type="submit"] {
+    cursor: pointer;
+}
+
+a {
+	font-style: normal;
+	text-decoration: none;
+}
+
+label{
+	font-weight: bold;
+	margin-left: 30px;
+}
+
+legend{
+	font-size: large;
+}
+
+td {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+/*------------------------------------------------------*
+ *   Cabecera principal de la página                    *
+ *------------------------------------------------------*/
+#cabecera{
+    margin-top: 50px;
+	height: 110px;
+	min-width: 850px;
+	font-family: 'pt_sans_caption';
+	text-align: left;
+    color: /* greenishBlue  */ #5A8FA8;
+}
+
+#cabecera a {
+    color: /* greenishBlue  */ #5A8FA8;
+}
+
+#logoWeb {
+    height: 90px;
+    width: 120px;
+    float: left;
+    line-height: 120px;
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+
+#tituloWeb {
+    font-size: 5em;
+    line-height: 120px;
+	height: 90px;
+	width: auto;
+    float: left;
+    margin-left: 20px;
+}
+
+
+#tituloWeb img {
+	height: 100px;
+	width: auto;
+}
+#subtituloWeb{
+    font-family: 'pt_sans_caption';
+    font-size: 0.8em;
+    color: white;
+    float: left;
+    margin-left: 20px;
+    line-height: 140px;
+}
+
+/*------------------------------------------------------*
+ *   Contenido de la página (lo que no es cabecera)     *
+ *------------------------------------------------------*/
+#contenido {
+    -webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	min-width: 850px;
+    background-color: /* lightGray_2  */ #CCC;
+    margin: 0;
+    padding: 5px;
+    /*height: 100%;*/
+}
+
+#contenido_ppal {
+    height: 100%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+/*------------------------------------------------------*
+ *   Subcabecera con los items correspondientes         *
+ *------------------------------------------------------*/
+ 
+/* Menu de navegacion -*/
+#menu_navegacion {
+	background-color: /* darkGray_1  */ #222;
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#menu_navegacion a {
+   padding: 0 15px;
+   height: 60px;
+   text-decoration: none;
+   color: white;
+   outline: none;
+   display: block; 
+}
+
+#menu_navegacion .nav {
+	text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#menu_navegacion .nav li {
+    color: white;
+    line-height:60px;
+	list-style-type: none;
+	display:inline;
+	text-align: right;
+	font-weight: bold;
+	font-size: 1.25em;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+/* ------------------------- */
+/* Item del menu 'carrito' */
+
+#carrito {
+    width: 170px;
+}
+
+#carrito_img {
+    margin-top: 5px;
+	height: 50px;
+	width: auto;
+    float: left;
+}
+
+#carrito_items {
+    margin-left: 10px;
+    float: right;
+	font-size: 0.8em !important;
+}
+
+/* ------------------------- */
+/* Item del menu 'buscador' */
+
+#buscador {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 400px;
+	height: 40px;
+	margin-top: 10px;
+}
+
+#buscador_selector {
+    float: left;
+    width: 140px;
+    line-height: 40px;
+    height: 100%;
+    background: url('img/select.svg') no-repeat 115px /* greenishBlue  */ #5A8FA8;
+	background-size: 15px auto;
+    -webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+#buscador_selector select {
+    color: black;
+    background: transparent;
+    font-size: 0.6em;
+    float: left;
+    line-height: 40px;
+    text-indent: 10px;
+    width: 140px;
+    outline-width: 0;
+    border: 0;
+    -webkit-appearance: none;
+}
+
+
+#buscador_texto {
+    float: left;
+    padding: 0;
+	border: 0;
+	width: 220px;
+	height: 100%;
+	text-indent: 10px;
+	font-size: 0.6em;
+}
+
+#buscador_texto:focus {
+    /*outline-width: ; /* Disable colored outline */ 
+    outline-color: /* greenishBlue  */ #5A8FA8;
+}
+
+#buscador_boton {
+    border: none;
+    float: right;
+    background: /* greenishBlue  */ #5A8FA8;
+	border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	height: 100%;
+	width: 10%;
+	min-width: 40px;
+	max-width: 40px;
+}
+#buscador_boton input img {
+	height: 30px;
+	width: auto;
+}
+/* ------------------------- */
+/* Item del menu 'listado completo' */
+
+li#botonListado {
+	text-decoration: underline;
+	
+}
+
+/* ------------------------- */
+
+#logoAddProduct{
+	position: absolute;
+	left: 100px;
+	top: 25px;
+	width: 60px;
+	height: 60px;
+}
+#addProduct{
+	position: absolute;
+	left: 165px;
+	top: 40px;
+	font-weight: bold;
+	font-size: x-large;
+	vertical-align: 25px;
+}
+#selectPropiedades{
+	position: absolute;
+	left: 500px;
+	top: 40px;
+	vertical-align: 25px;
+	width: 150px;
+	height: 30px;
+}
+#textoBusq{
+	position: absolute;
+	left: 660px;
+	top: 40px;
+	vertical-align: 25px;
+	height: 30px;
+}
+
+#logoBusqueda{
+	position: absolute;
+	left: 820px;
+	top: 30px;
+	margin-bottom: 5px;
+	margin-left: -5px;
+	width: 50px;
+	height: 50px;
+}
+
+/*--------------------------------------------------------- */
+/* Footer */
+/*--------------------------------------------------------- */
+#pie {
+	color: white;
+	margin-top: 5px;
+	width: 100%;
+	height: 30px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	line-height: 30px;
+	font-size: 0.75em;
+	text-align: center;
+}
+
+/*--------------------------------------------------------- */
+/* Sección principal pagina Home */
+/*--------------------------------------------------------- */
+#titulo{
+    width: 100%;
+    height: 50px;
+
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: /* greenishBlue  */ #5A8FA8;
+    border-bottom: 0px;
+    color: white;
+	text-align:center;
+	font-size: 2em;
+    line-height:50px;
+}
+
+#descripcion {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background-color: /* lightGray_0  */ #F0F0F0;
+	font-size: 1em;
+}
+
+div#formulario {
+  margin-top:50px;
+  text-align:center;
+  width:100%;
+}
+div#formulario_2 {
+  width:35%;
+  text-align:right;
+  margin:auto;
+}
+div#formulario_3 {
+  width:35%;
+  text-align:left;
+  margin:auto;
+}
+
+
+/*---------------------------------------------------------*/
+/* Tablas de busquedas y listado  */
+/*---------------------------------------------------------*/
+/*Propiedades generales de la tabla */
+table{
+	width: 100%;
+	border-collapse: collapse;
+        border:2px solid #CCC;
+        margin-top:20px;
+        margin-right:auto;
+        margin-left:auto;
+}
+th {
+  background-color:#222;
+  color: #CCC;
+}
+
+td {
+  background-color:#888;
+  color: #000;
+  width:90px;
+  border:2px solid #CCC;
+  text-align: center;
+}
+
+td.ref{
+	width: 20%;
+	text-align: left;
+}
+
+td.arq{
+	width: 20%;
+}
+
+td.freq{}
+
+td.flash{}
+
+td.ram{}
+
+td.precio{}
+
+.addButton {
+	padding: 0;
+	margin: 0;
+	height: 40px;
+	width: auto;
+}
+
+.insertButton {
+	height: 80px;
+	width: auto;
+	margin-left: 50%;
+}
+
+.modifyButton{
+	height: 80px;
+	width: 80px;
+	margin-left: 50%;
+}
+
+.editar_boton {
+	height : 25px;
+	width : auto;
+}
+
+.eliminar_boton {
+	height : 30px;
+	width : auto;
+	margin-left: 15px;
+}
+
+td#agregar_boton {
+	width: 10%;
+	text-align: center;
+	background-color: transparent;
+}
+
+td#agregar_boton input {
+	height : 50px;
+	width : auto;
+	margin: 0;
+}
+
+.updateButton {
+	height : 35px;
+	width : auto;
+}
+
+.emptyButton {
+	height : 35px;
+	width : auto;
+}
+
+td.buttonsEditDelete{
+	
+}
+
+/*//////////////////////////////////////////////////////////////////////////*/
+
+/* Primera fila */
+.first_row{
+	background-color: #C0C0C0;
+	position: relative;
+	height: 30px;
+}
+.first_row td{
+	font-size: 20px;
+	font-family: Arial;
+	font-weight: bold;
+	font-style: normal;
+	color: #333333;
+}
+/* Siguientes filas de la tabla */
+.all_row{
+	position: relative;
+	height: 70px;
+}
+/* Primera columna */
+#firstCol{
+	background-color: white;
+	border: none;
+}
+/* Logo añadir a carrito */
+#logoTabla{
+	width: 50px;
+	height: 50px;
+}
+
+
+/*--------------------------------------------------------- */
+/* Formularios */
+/*--------------------------------------------------------- */
+#addModForm{
+	position: absolute;
+	top:350px;
+	left: 432px;
+	width: 500px;
+}
+.campoForm{
+	margin: .8em 0;
+}
+#buttonsForm{
+	margin-left: 200px;
+}
+.buttonForm{
+	font-weight:bold;
+	padding: 5px;
+	margin-right: 20px;
+}
+
+/*--------------------------------------------------------- */
+/* Pagina del carrito */
+/*--------------------------------------------------------- */
+
+/* Fila de totales */
+#lastRow1{
+	position:relative;
+	top: 10px;
+	background-color: white;
+	border:white;
+	height:50;
+}
+
+/* Fila de botones */
+#lastRow2{
+	position:relative;
+	top: 10px;
+	background-color: white;
+	border:white;
+	height:80;
+}
+
+.precio{
+	text-align: right;
+}
+
+.unidades{
+	text-align: center;
+}
+
+.right {
+  text-align:right;
+}
+
+.centered {
+	text-align: center;
+}
+
+#botones_carro{
+  text-align:right;
+  margin-right:100px;
+}
+
+div.block{
+  overflow:hidden;
+  width:800px;
+  display:block;
+  margin:auto;
+}
+div.block .celdah{
+  height:40px;
+  display:block;
+  float:left;
+  background-color:#888;
+  margin:2px;
+  text-align:center;
+}
+div.block .celda{
+  width:180px;
+  height:30px;
+  display:block;
+  float:left;
+  background-color:#888;
+  margin:2px;
+  text-align:right;
+}
+div.block .celda2{
+  width:80px;
+  height:30px;
+  display:block;
+  float:left;
+  background-color:#888;
+  margin:2px;
+  text-align:right;
+}
+div.block .input{
+  margin-left:4px;
+  float:left;
+}
+
+#realizar_pedido {
+    width: 145px;
+	margin-right: 3px;
+    height: 30px;
+	font-size: 0.9em !important;
+	background-color: /* darkGray_1  */ #222;
+	text-shadow: 1px 1px /* darkGray_1  */ #222;
+	color: white;
+	border: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	cursor: pointer;
+	box-shadow: 0 1px 0 /* darkGray_1  */ #222 inset;
+	-moz-box-shadow: 0 1px 0 /* darkGray_1  */ #222 inset;
+	-webkit-box-shadow: 0 1px 0 /* darkGray_1  */ #222 inset;
+}
+
