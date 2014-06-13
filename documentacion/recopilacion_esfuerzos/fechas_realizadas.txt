@@ -1,0 +1,21 @@
+
+Primera iteración: 
+Tarea 0 : 24/02- 08/03
+Tarea 1 : 18/03 -  10/04       
+Población BD : 12/03 - 18/04
+Tarea 2 : 06/03 - 15/03   
+Tarea 3 : 06/03 - 15/03  
+Tarea 4 : 06/03 - 15/03   
+Tarea 5 : 06/03 - 15/03   
+Doc.técnica : 02/03 - 18/04
+Guía de Usuario : 18/04 - 22/04
+Pruebas : 30/03 -19/04
+
+Segunda iteración: 
+Tarea 6 : 19/05 - 26/05
+Tarea 7 : 19/05 - 26/05
+Tarea 8 : 21/05 - 26/05
+Doc.técnica : 26/05 - 30/05
+Guía de Usuario : 22/05 - 27-02
+Pruebas : 23/05 - 28/05
+Cierre : 22/05 - 01/06 

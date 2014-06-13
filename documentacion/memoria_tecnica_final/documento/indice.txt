@@ -1,0 +1,108 @@
+
+%==============================================================================================
+% 01.   INTRODUCCIÓN
+% 01.1. IDENTIFICACIÓN DEL PROYECTO
+% 01.2. OBJETIVO Y ALCANCE DEL PROYECTO
+% 01.3. IDENTIFICACIÓN DEL EQUIPO QUE REALIZA EL PROYECTO
+% 01.4. BREVE DESCRIPCION DEL CONTENIDO DEL RESTO DE SECCIONES DE LA MEMORIA, INCLUYENDO ANEXOS
+%==============================================================================================
+% 02.  REQUISITOS DEL SISTEMA
+%==============================================================================================
+% 03.   DESCRIPCIÓN TÉCNICA
+% 03.1. ASPECTOS ARQUITECTURALES Y TECNOLOGICOS
+% 03.2. MODELOS DE DATOS
+% 03.3. INFORMACIÓN DE DISEÑO DE COMPONENTES RELEVANTES DEL SISTEMA
+%==============================================================================================
+% 04.   VERIFICACIÓN Y VALIDACIÓN DEL SISTEMA
+% 04.1. DESCRIPCIÓN DE LA METODOLOGÍA SEGUIDA PARA LA REALIZACIÓN DE LAS PRUEBAS DEL SISTEMA
+% 04.2. PRUEBAS REALIZADAS, DEFECTOS ENCONTRADOS Y CAMBIOS Y CORRECCIONES QUE HA HABIDO
+%       QUE REALIZAR. EN ESTA SECCIÓN O EN ANEXO LOS INFORMES DE TODAS LAS PRUEBAS.
+%==============================================================================================
+% 05.   MANUALES
+% 05.1. MANUAL DE USUARIO
+% 05.1. MANUAL DE INSTALACIÓN
+%==============================================================================================
+% 06.     GESTIÓN DEL PROYECTO
+% 06.1.   FASES Y ACTIVIDADES DEL PROYECTO
+% 06.1.1. RIESGOS
+% 06.1.2. ESTIMACIONES GLOBALES DE TAMAÑOS Y ESFUERZOS INICIALES
+% 06.1.3. CRONOGRAMAS GLOBAL INICIAL Y FINAL
+% 06.1.4. TAREAS Y ESTIMACIONES DE ESFUERZOS POR ITERACIÓN 
+% 06.1.5. FICHEROS DE ESFUERZOS INDIVIDUALES 
+% 06.1.6. ESFUERZOS REALES DE LAS TAREAS POR ITERACIÓN 
+% 06.1.7. ESFUERZOS REALES DE LAS PERSONAS Y ROLES 
+% 06.2.   PROCESOS DE SEGUIMIENTO Y CONTROL
+% 06.2.1. CALENDARIO DE LAS DISTINTAS REUNIONES CELEBRADAS
+% 06.2.2. ACTAS DE LAS DISTINTAS REUNIONES CELEBRADAS
+% 06.3.   COSTE REAL DEL PROYECTO
+%==============================================================================================
+% 07.   GESTIÓN DE CONFIGURACIONES DEL PROYECTO
+% 07.1. POLÍTICAS DE NOMBRADO
+% 07.2. CONTROL DE VERSIONES
+% 07.3. COPIAS DE SEGURIDAD
+% 07.4. ELEMENTOS DE CONFIGURACIÓN Y LINEA BASE
+%==============================================================================================
+% 08.   ASEGURAMIENTO DE LA CALIDAD DEL PROYECTO
+% 08.1. ESTÁNDARES UTILIZADOS
+% 08.2. PLANIFICACIÓN DE LAS AUDITORÍAS
+% 08.3. AUDITORÍAS
+% 08.4. AUDITORÍA EXTERNA
+%==============================================================================================
+% 09.   POSTMORTEM DEL PROYECTO
+% 09.1. LECCIONES APRENDIDAS
+% 09.2. PROBLEMAS ENCONTRADOS
+% 09.3. CATÁLOGO DE RIESGOS
+% 09.4. ANÁLISIS DIFERENCIAS ESFUERZOS Y TAMAÑOS REALES DEL PROYECTO VS LOS ESTIMADOS
+% 09.5. PLAN REAL VS PLANIFICACIÓN INCIAL
+% 09.6. ANÁLISIS DIFERENCIAS COSTE REAL DEL PROYECTO VS PRESUPUESTO
+%==============================================================================================
+% 10. CONCLUSIONES
+% 10.1. CONCLUSIONES DEL PROYECTO
+% 10.2. IDEAS DE MEJORA DEL PROCESO
+% 10.3. IDEAS DE MEJORA DEL DESARROLLO DEL PROYECTO DENTRO DE LA ASIGNATURA
+% 10.4. VALORACIONES SUBJETIVAS PERO ARGUMENTADAS
+%==============================================================================================
+% A. CURRICULUMS VITAE
+% A.1. CURRICULUM VITAE: DANIEL
+% A.2. CURRICULUM VITAE: JAVIER
+% A.3. CURRICULUM VITAE: JAVIER
+% A.4. CURRICULUM VITAE: ALEJANDRO
+% A.5. CURRICULUM VITAE: ALBERTO
+% A.6. CURRICULUM VITAE: HÉCTOR
+%==============================================================================================
+% B. HOJAS DE ESFUERZOS
+% B.1. HOJA DE ESFUERZOS: DANIEL
+% B.1. HOJA DE ESFUERZOS: DANIEL
+% B.2. HOJA DE ESFUERZOS: JAVIER
+% B.3. HOJA DE ESFUERZOS: SIMÓN
+% B.4. HOJA DE ESFUERZOS: ALEJANDRO
+% B.5. HOJA DE ESFUERZOS: ALBERTO
+% B.6. HOJA DE ESFUERZOS: HÉCTOR
+%==============================================================================================
+% C. CRONOGRAMAS
+% C.1. CRONOGRAMA INICIAL
+% C.2. CRONOGRAMA FINAL
+%==============================================================================================
+% D.    ACTAS DE REUNIONES
+% D.01. ACTA DE REUNION #01
+% D.02. ACTA DE REUNION #02
+% D.03. ACTA DE REUNION #03
+% D.04. ACTA DE REUNION #04
+% D.05. ACTA DE REUNION #05
+% D.06. ACTA DE REUNION #06
+% D.07. ACTA DE REUNION #07
+% D.08. ACTA DE REUNION #08
+% D.10. ACTA DE REUNION #10
+% D.11. ACTA DE REUNION #11
+% D.12. ACTA DE REUNION #12
+%==============================================================================================
+% E. PRESUPUESTO
+%==============================================================================================
+% F. AUDITORÍAS
+%==============================================================================================
+% G. MANUALES
+% G.1. MANUAL DE USUARIO
+% G.2. MANUAL DE INSTALACIÓN
+%==============================================================================================
+% H. INFORMES DE PRUEBAS
+%==============================================================================================

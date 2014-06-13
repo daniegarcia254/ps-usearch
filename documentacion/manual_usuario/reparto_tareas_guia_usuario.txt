@@ -1,0 +1,24 @@
+REPARTO DE TAREAS PARA LA DOCUMENTACIÓN DEL MANUAL O GUÍA DE USUARIO (1ª ITERACIÓN)
+
+	- USUARIO
+		- Página Principal			--> Dani		DONE!!
+		- Página Listado Completo	--> Héctor		DONE!!
+		- Página Carrito			--> Alberto		DONE!!
+		- Página Generación Pedido	--> Alberto		DONE!!
+	
+	- ADMINISTRADOR
+		- Página Principal 			--> Dani		DONE!!
+		- Página Listado Completo	--> Héctor		DONE!!
+		- Página Añadir Micro		--> Alejandro	DONE!!
+		- Página Editar Micro		--> Alejandro	DONE!!
+		
+
+Explicar que es lo que se puede hacer en cada una de las páginas lo más exhaustivamente posible.
+
+
+Que se muestra en cada página. A donde puede acceder el usuario/administrador y a donde le llevará pulsar aquí o allá.
+ 
+
+Dado que todavía está sin terminar la vista de la aplicación y hay que mejorala, no añadir aún a la guía de usuario capturas de pantalla. 
+	
+	

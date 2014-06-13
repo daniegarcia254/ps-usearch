@@ -1,0 +1,54 @@
+\begin{enumerate}[label=\bf RF\twodigits*.,leftmargin=*]
+\setlength{\itemindent}{0pt}
+\item Un microcontrolador (elemento) estará compuesto de los siguientes campos: 
+	\begin{enumerate}[label=\textbf{\arabic*} -]
+		\item Referencia (será única para cada elemento).
+        \item Arquitectura
+        \item Frecuencia (MHz)
+        \item Flash (KB)
+        \item RAM (KB)
+        \item Precio (Euros)
+	\end{enumerate}
+	
+\item Insertar un elemento en el carro de compra.
+   
+\item Eliminar un elemento del carro de compra.
+	
+\item Modificar un elemento del carro de compra. Por modificar se entiende alterar el número de unidades de los elementos.
+
+\item Se podrá generar en cualquier momento un listado de todos los elementos del catálogo.
+
+\item Se podrá actualizar varios elementos del carro de manera simultánea. Por actualizar se entiende a recalcular los precios de cada artículo en el caso de que éstos hayan sido modificados.
+
+\item Se permitirá realizar búsquedas de productos en base a un único campo de búsqueda (una y solo una de las características de los elementos).
+	
+\item Los resultados de la búsqueda se presentarán como un listado (sin paginación) que mostrará, de cada elemento, todos sus campos en columnas.
+
+\item Los listados de elementos del catálogo estarán ordenados en base al campo arquitectura del elemento.
+
+\item Se permitirá realizar pedidos. Cada vez que se realice un pedido se le pedirá al cliente la introducción de sus datos personales. Es decir, no existirá persistencia de los datos del cliente tras realizar pedidos.
+
+\item Los pedidos contendrán la suficiente información para identificar a los clientes. Además, no permitirán la reserva de los productos solicitados, únicamente generarán un presupuesto con el coste de los productos elegidos.
+
+\item Los datos solicitados del cliente para los pedidos serán los siguientes:
+	\begin{enumerate}[label=\textbf{\arabic*} -]
+		\item Nombre 
+		\item Apellidos
+	    \item Dirección
+	    \item Ciudad
+	    \item Provincia
+	    \item País
+	    \item Código postal
+	    \item Teléfono
+	    \item Correo electrónico
+	    \item CIF y Empresa aparecerán como campos opcionales que servirán de distinción entre particulares y entidades.
+	\end{enumerate}
+
+\item Se contará con una vista diferente para la administración del catálogo a la que no podrán acceder los clientes (se ejecutará solamente en local), sólo los administradores.
+En ésta vista se podrán realizar las acciones de:
+	\begin{enumerate}[label=\textbf{\arabic*} -]
+    	\item Insertar un elemento en el catálogo.
+		\item Eliminar un elemento del catálogo.
+        \item Modificar un elemento del catálogo (cambiar cualquiera de sus características).
+    \end{enumerate}   
+\end{enumerate}

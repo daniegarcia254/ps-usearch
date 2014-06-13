@@ -1,0 +1,63 @@
+% 02. REQUISITOS DEL SISTEMA
+%==============================================================================================
+\paragraph{}Se presentan en este apartado los requisitos funcionales con los que el sistema debe cumplir:
+
+% Configuración margenes lista de requisitos
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+\setlist[enumerate]{leftmargin=0.7in,labelindent=\parindent}
+\setlist[itemize]{leftmargin=0.7in,labelindent=\parindent}
+
+\begin{description}
+\item[RF-1] Un microcontrolador (elemento) estará compuesto de los siguientes campos: 
+	\begin{enumerate}
+		\item Referencia (será única para cada elemento).
+        \item Arquitectura
+        \item Frecuencia (MHz)
+        \item Flash (KB)
+        \item RAM (KB)
+        \item Precio (Euros)
+	\end{enumerate}
+	
+\item[RF-2] Insertar un elemento en el carro de compra.
+   
+\item[RF-3] Eliminar un elemento del carro de compra.
+	
+\item[RF-4] Modificar un elemento del carro de compra. Por modificar se entiende alterar el número de unidades de los elementos.
+
+\item[RF-5] Se podrá generar en cualquier momento un listado de todos los elementos del catálogo.
+
+\item[RF-6] Se podrá actualizar varios elementos del carro de manera simultánea. Por actualizar se entiende a recalcular los precios de cada artículo en el caso de que éstos hayan sido modificados.
+
+\item[RF-7] Se podrá en cualquier momento realizar búsquedas de productos en base a un único campo de búsqueda (una y sólo una de las características de un elemento).
+	
+\item[RF-8] Los resultados de la búsqueda se presentarán como un listado (sin paginación) que mostrará, de cada elemento, todos sus campos en columnas.
+
+\item[RF-9] Los listados de elementos del catálogo estarán ordenados en base al campo arquitectura del elemento.
+
+\item[RF-10] Se permitirá realizar pedidos. Cada vez que se realice un pedido se le pedirá al cliente la introducción de sus datos personales. Es decir, no existirá persistencia de los datos del cliente tras realizar pedidos.
+
+\item[RF-11] Los pedidos contendrán la suficiente información para identificar a los clientes. Además, no permitirán la reserva de los productos solicitados, únicamente generarán un presupuesto con el coste de los productos elegidos.
+
+\item[RF-12] Los datos solicitados del cliente para los pedidos serán los siguientes:
+	\begin{enumerate}
+		\item Nombre 
+		\item Apellidos
+	    \item Dirección
+	    \item Ciudad
+	    \item Provincia
+	    \item País
+	    \item Código postal
+	    \item Teléfono
+	    \item Correo electrónico
+	    \item CIF y Empresa aparecerán como campos opcionales que servirán de distinción entre particulares y entidades.
+	\end{enumerate}
+
+\item[RF-13] Se contará con una vista diferente para la administración del catálogo. Pudiendo un administrador de la empresa realizar las siguientes acciones:
+	\begin{itemize}
+    	\item Insertar un nuevo elemento en el catálogo.
+		\item Eliminar un elemento del catálogo.
+        \item Modificar un elemento del catálogo (cambiar cualquiera de sus características).
+        \item Generar en cualquier momento un listado completo de todos los elementos del catálogo.
+        \item Realizar en cualquier momento búsquedas de productos en base a un único campo de búsqueda (una y sólo una de las características de un elemento).
+    \end{itemize}   
+\end{description}

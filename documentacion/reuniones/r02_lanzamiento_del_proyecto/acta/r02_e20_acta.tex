@@ -1,0 +1,295 @@
+\documentclass[10pt,spanish]{article}
+
+%----------------------------------------------------------------------------------------
+% Codificación, y usar una fuente similar a la Palatino (y no Latin Modern Roman)
+\usepackage[utf8]{inputenc} % Acentos, etc.
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel} % Castellano
+\usepackage{tgpagella}      % Fuente similar a Palatino
+
+%----------------------------------------------------------------------------------------
+% MÁRGENES (menores que en otro tipo de documentos)
+\addtolength{\oddsidemargin}{-.375in}
+\addtolength{\evensidemargin}{-.375in}
+\addtolength{\textwidth}{1.25in}
+
+%\addtolength{\topmargin}{-.375in}
+%\addtolength{\textheight}{.5in}
+
+%----------------------------------------------------------------------------------------
+% COLORES
+\usepackage{xcolor,colortbl} % Colores personalizados y color fondo tablas
+\definecolor{grisCabeceraTabla}{RGB}{220,220,220}
+\definecolor{grisHeader}{RGB}{180,180,180}
+	
+%----------------------------------------------------------------------------------------
+% TABLAS	  
+%\usepackage{supertabular} % Tablas multipágina
+\linespread {1.4} % Tamaño que ocupa una línea (celda)
+
+\usepackage{array}
+\usepackage{longtable}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength{\columnsep}{0em}
+
+% Definir los estilos de las celdas para indentar el texto
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Filas con columnas multiples
+\newcommand{\mc}[2]{\multicolumn{#1}{|C{\dimexpr 1\linewidth-2\tabcolsep}|}{#2}}
+
+% Colores de lineas de las tablas
+%\arrayrulecolor{grisCabeceraTabla}
+\arrayrulecolor{grisHeader}
+
+% Eliminar espacio previo en lista de ítems
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+% Comandos especiales para crear items dentro de tabla y poder hacer
+% una tabla de multiples paginas y que se pueda realizar el salto de
+% pagina en cualquier punto.
+\usepackage{scrextend}
+\newenvironment{lvlOneItem}
+	{\begin{addmargin}[2.5em]{1em}
+	\vspace{-1em}
+	\hspace{-1em}$\bullet$\hspace{0.5em}}
+	{\vspace{-2em}\end{addmargin}}
+\newenvironment{lvlTwoItem}
+	{\begin{addmargin}[4em]{1em}
+	\vspace{-1em}
+	\hspace{-1em}$\circ$\hspace{0.5em}}
+	{\vspace{-2em}\end{addmargin}}
+
+
+\newcommand{\itemNvlUno}[1]{\begin{lvlOneItem}{#1}\end{lvlOneItem}\\}
+\newcommand{\itemNvlDos}[1]{\begin{lvlTwoItem}{#1}\end{lvlTwoItem}\\}
+\newcommand{\espacioSubtabla}{\\[0.5ex]}
+\newcommand{\cabeceraTabla}[1]{\rowcolor{grisCabeceraTabla}{\bf #1}}
+
+%----------------------------------------------------------------------------------------
+% METADATOS DEL PDF Y PDF CLICKEABLE
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+
+% DATOS A CAMBIAR
+\newcommand{\numeroDeReunion}{02}
+\newcommand{\tituloReunion}{\bf Lanzamiento del proyecto}
+\newcommand{\nombreDelProyecto}{$\mu$Search}
+
+\hypersetup{
+	pdfauthor={Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra},
+	pdftitle={E20 - Acta R\numeroDeReunion: \tituloReunion},
+	pdfsubject={Proyecto Software. Grado Ing. Informática. EINA. Unizar},
+	pdfkeywords={},
+	pdfcopyright={Copyright (C) 2014 by Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra. All rights reserved.},
+	pdfproducer={PDFLatex},
+	pdfcreator={ps2pdf},
+	colorlinks=false
+}
+
+%----------------------------------------------------------------------------------------
+% Encabezados y pies de pagina : FancyHdr
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % borrar todos los ajustes
+\setlength{\headheight}{15pt}
+\usepackage{lastpage} % Para poner total de paginas en el footer, ej: pag 1/4
+
+\fancyhead[L]{\color{grisHeader}{\large BITPARTY}}
+\fancyhead[R]{\color{grisHeader}E20 - Acta R\numeroDeReunion \\ \nombreDelProyecto}
+\fancyfoot[R]{\color{grisHeader}\thepage/\pageref*{LastPage}}
+
+% Modifica el ancho de las líneas de cabecera y pie
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headsep}{0.6in}
+\renewcommand{\headwidth}{6in}
+
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+% INICIO DEL DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+	
+\begin{center}	
+\Large{Acta de Reunión Nº \numeroDeReunion\hspace{0.25em}-\hspace{0.25em}\tituloReunion}
+\end{center}
+\vspace{1.5em}
+
+% PRIMERA TABLA: INFORMACIÓN BÁSICA
+\begin{longtable}{ | L{\dimexpr 0.420\linewidth-2\tabcolsep} |
+				     L{\dimexpr 0.570\linewidth-2\tabcolsep} | }
+\hline % ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}
+\mc{2}{\bf Información básica}  \\
+%\hline % ------------------------------------------------------------------------
+%{\bf Cliente} & Nombre del cliente (por definir o no es necesario ?)  \\
+\hline % ------------------------------------------------------------------------
+{\bf Proyecto} & $\mu$Search \\ 
+\hline % ------------------------------------------------------------------------
+{\bf Fecha y hora de comienzo} & 20/02/14 - 12:00 \\
+\hline % ------------------------------------------------------------------------
+{\bf Lugar} & Seminario 21, Edif. Ada Byron. EINA. Unizar \\
+\hline % ------------------------------------------------------------------------
+{\bf Tipo de reunión} & Estándar \\
+\hline % ------------------------------------------------------------------------
+\end{longtable}
+
+
+%----------------------------------------------------------------------------------------
+% SEGUNDA TABLA - ASISTENTES
+\begin{longtable}{ | C{\dimexpr 0.070\linewidth-2\tabcolsep} |
+                     L{\dimexpr 0.350\linewidth-2\tabcolsep} |
+                     C{\dimexpr 0.370\linewidth-2\tabcolsep} |
+                     C{\dimexpr 0.200\linewidth-2\tabcolsep} | }
+\hline % ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}
+\mc{4}{\bf Asistentes} \\
+\hline % ------------------------------------------------------------------------
+{\bf Nº} & {\bf Nombre y Apellidos} & {\bf Cargo} & {\bf Rol} \\
+\hline % ------------------------------------------------------------------------
+{\bf 1} & Alberto Berbel Aznar & Verificación y validación & --  \\
+\hline % ------------------------------------------------------------------------
+{\bf 2} & Javier Briz Alastrué & Gestor de configuraciones & --  \\
+\hline % ------------------------------------------------------------------------
+{\bf 3} & Héctor Francia Molinero & Gestor de calidad & --  \\
+\hline % ----------------------------------------------------
+{\bf 4} & Daniel García Páez & Director del proyecto & -- \\
+\hline % ------------------------------------------------------------------------
+{\bf 5} & Alejandro Gracia Mateo & Gestor de planificación & --  \\
+\hline % ------------------------------------------------------------------------
+{\bf 6} & Simón Ortego Parra & Gestor de desarrollo & Secretario  \\
+\hline % ------------------------------------------------------------------------
+\end{longtable}
+
+
+%----------------------------------------------------------------------------------------
+% TERCERA TABLA - AUSENTES
+%\begin{longtable}{ | C{\dimexpr 0.070\linewidth-2\tabcolsep} |
+%                     L{\dimexpr 0.350\linewidth-2\tabcolsep}  |
+%                     C{\dimexpr 0.570\linewidth-2\tabcolsep} | }
+%\hline % ------------------------------------------------------------------------
+%\rowcolor{grisCabeceraTabla}
+%\mc{3}{\bf Ausentes} \\ 
+%\hline % ------------------------------------------------------------------------
+%{\bf Nº} & {\bf Nombre y Apellidos} & {\bf Cargo} \\
+%\hline % ------------------------------------------------------------------------
+%{\bf 1} & Alberto Berbel Aznar & Verificación y validación \\
+%\hline % ------------------------------------------------------------------------
+%{\bf 1} & Javier Briz Alastrué & Gestor de configuraciones \\
+%\hline % ----------------------------------------------------
+%{\bf 2} & Héctor Francia Molinero & Gestor de calidad \\
+%\hline % ------------------------------------------------------------------------
+%{\bf 2} & Daniel García Páez & Director del proyecto \\
+%\hline % ------------------------------------------------------------------------
+%{\bf 3} & Alejandro Gracia Mateo & Gestor de planificación \\
+%\hline % ------------------------------------------------------------------------
+%{\bf 4} & Simón Ortego Parra & Gestor de desarrollo \\
+%\hline % ------------------------------------------------------------------------
+%\end{longtable}
+
+
+%----------------------------------------------------------------------------------------
+% CUARTA TABLA - OBJETIVOS, CUERPO DE LA REUNIÓN, DECISIONES TOMADAS, ...
+\begin{longtable}{ | C{\dimexpr\linewidth-2\tabcolsep} | }
+\hline % ------------------------------------------------------------------------
+\cabeceraTabla{Objetivos} \\
+\hline % ------------------------------------------------------------------------
+\endfirsthead
+\hline % ------------------------------------------------------------------------
+\endhead
+\espacioSubtabla
+\hline % ------------------------------------------------------------------------
+\endfoot
+\hline % ------------------------------------------------------------------------
+\endlastfoot
+
+\itemNvlUno{Organizar de forma consensuada el comienzo del proyecto y algunos
+aspectos generales.} \\
+
+\hline % ------------------------------------------------------------------------
+\cabeceraTabla{Cuerpo de la reunión} \\
+\hline % ------------------------------------------------------------------------
+
+\itemNvlUno{Cada uno de los asistentes se presentó a la hora.}
+\itemNvlUno{Se analizaron los requisitos de la aplicación de nuevo y
+se fijaron perfectamente todos los parámetros.}
+\itemNvlUno{Se pasó a hablar de la arquitectura en alto nivel del sistema
+a desarrollar y de realizar los diagramas explicativos apropiados (diagramas
+de componentes y de despliegue).}
+\itemNvlUno{Se establecieron las tecnologías y estándares de codificación del
+proyecto software.}
+\itemNvlUno{Se decidieron las herramientas usadas para la documentación durante 
+el desarrrollo del proyecto.}
+\itemNvlUno{Se establecieron los mecanismos de comunicación entre los componentes
+del equipo.}
+\itemNvlUno{Se realizó una planificación de las tareas ha realizar inmediatamente
+para el desarrollo del documento de ``Propuesta de Proyecto''.}\\
+
+\hline % ------------------------------------------------------------------------
+\cabeceraTabla{Decisiones tomadas}  \\
+\hline % ------------------------------------------------------------------------
+
+\itemNvlUno{Se establecieron como tecnologías y estándares de codificación (los
+establecidos por los desarrolladores de éstas) las siguientes:}
+	\itemNvlDos{HTML 5.}
+	\itemNvlDos{CSS 3.}
+	\itemNvlDos{PHP 5 y CodeIgniter (la versión apropiada).}
+	\itemNvlDos{MySQL.}
+	\itemNvlDos{LaTex: para la generación de la órden de pedido automática.}
+\itemNvlUno{Para la documentación durante el desarrrollo del proyecto
+se van a utilizar las siguientes herramientas:}
+	\itemNvlDos{LaTex: para todo tipo de documentación (Actas, Convocatorias,
+	documentos formales,etc.)}
+	\itemNvlDos{Excel o similar (.xls): para la anotación de los esfuerzos
+	de cada uno de los miembros del equipo.}
+	\itemNvlDos{Modelio: para realizar diferentes diagramas relacionados
+	con la Ingeniería del Software.}
+	\itemNvlDos{Subversion: para el almacenamiento de todos los documentos.}
+\itemNvlUno{Para la comunicación entre los miembros se van a utilizar:}
+	\itemNvlDos{Google Groups: para todo tipo de comunicación.}
+	\itemNvlDos{Whatsapp: para la comunicación informal (problemas, retrasos, citas,...)}
+\itemNvlUno{Se realizó la siguiente planificación de cara a la presentación de la
+``Propuesta de Proyecto'' que incluye una aproximación del número de horas y
+los miembros a los que se les asigna cada una de las tareas:}
+	\itemNvlDos{[2 h.] - Diagrama E/R de la BD + prototipo inicial de la 
+	aplicación en papel: Daniel y Javier.}
+	\itemNvlDos{[1 h.] - Diseño arquitectural del sistema (diag. componentes 
+	y despliegue): Alberto.}
+	\itemNvlDos{[1 h.] - Plantillas de documentación en LaTeX para las actas,
+	convocatorias y propuesta de proyecto: Simón.}
+	\itemNvlDos{[1 h.] - Hojas de esfuerzos: Códigos de categorías (incluyendo un 
+	documento de texto explicativo con código + nombre + descr.): Alejandro}
+	\itemNvlDos{[2 h.] - Logotipo + Nombre de la empresa: Héctor.}\\
+
+\hline % ------------------------------------------------------------------------
+\cabeceraTabla{Temas pendientes} \\
+\hline % ------------------------------------------------------------------------
+
+\itemNvlUno{Elección del responsable de la propuesta de proyecto.}
+\itemNvlUno{Calendario de trabajo.}
+\itemNvlUno{Iniciar el uso de la Wiki + Subversion.} \\
+	
+\hline % ------------------------------------------------------------------------
+\cabeceraTabla{Próxima reunión prevista} \\
+\hline % ------------------------------------------------------------------------
+Miércoles 26 de Febrero del 2014 a las 20:00 \\
+\end{longtable}
+
+
+\end{document}

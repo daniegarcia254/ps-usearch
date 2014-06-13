@@ -1,0 +1,172 @@
+\documentclass[11pt,spanish]{article}
+
+%----------------------------------------------------------------------------------------
+% Codificación, y usar una fuente similar a la Palatino (y no Latin Modern Roman)
+\usepackage[utf8]{inputenc} % Acentos, etc.
+\usepackage[spanish]{babel} % Castellano
+\usepackage{tgpagella}      % Fuente similar a Palatino
+\usepackage[T1]{fontenc}
+
+%----------------------------------------------------------------------------------------
+% Imagenes: Que se pongan donde yo quiero
+\usepackage{graphicx}
+%\usepackage{float}
+\usepackage[linecolor=colComment,linewidth=0.65pt]{mdframed}
+
+\usepackage{floatpag} % Pagina en blanco cuando aparece figuras.
+
+\DeclareGraphicsExtensions{.svg,.eps,.ps,.pdf,.png,.jpg,.jpeg}
+\addto{\captionsspanish}{\renewcommand{\listfigurename}{\bfseries\Large Figuras}}
+
+%----------------------------------------------------------------------------------------
+% Cronograma: Diagrama de Gantt
+\usepackage{gantt}
+% Cronograma girado 90º
+\usepackage{rotating}
+\usepackage{fixltx2e} % poder poner "1ª" en modo texto (no matemático)
+
+%----------------------------------------------------------------------------------------
+% COLORES
+\usepackage{xcolor}
+
+% Paleta 1
+\definecolor{fucsia_cronograma}{RGB}{105,45,172}
+\definecolor{naranja_cronograma}{RGB}{255,153,0}
+\definecolor{verde_cronograma}{RGB}{87,190,133}
+\definecolor{rojo_cronograma}{RGB}{216,117,117}
+\definecolor{azul_cronograma}{RGB}{51, 102, 153}
+\definecolor{gris_cronograma}{RGB}{143,145,148}
+
+%----------------------------------------------------------------------------------------
+% LANDSCAPE
+\usepackage[landscape]{geometry}
+
+%----------------------------------------------------------------------------------------
+% METADATOS DEL PDF Y PDF CLICKEABLE
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+
+\hypersetup{
+	pdfauthor={Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra},
+	pdftitle={E20 - Cronograma},
+	pdfsubject={Proyecto Software. Grado Ing. Informática. EINA. Unizar},
+	pdfkeywords={},
+	pdfcopyright={Copyright (C) 2014 by Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra. All rights reserved.},
+	pdfproducer={PDFLatex},
+	pdfcreator={ps2pdf},
+	colorlinks=false
+}
+
+
+%----------------------------------------------------------------------------------------
+% FANCY HEADER
+\usepackage[head=34pt]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % borrar todos los ajustes
+
+% Configurar la cabecera: fancyhead, fancyfoot para el pie.
+\fancyhead[L]{\nouppercase\leftmark}
+\fancyhead[R]{\nouppercase\rightmark\hspace{0.5em}}
+\fancyfoot[C]{}
+
+% Cabecera parte derecha: número y título de sección, subsección, etc.
+\renewcommand{\sectionmark}[1]{}
+\renewcommand{\subsectionmark}[1]{}
+\renewcommand{\subsubsectionmark}[1]{}
+
+% Cabecera parte izquierda: Nombre de la empresa (logo) y nombre del proyecto
+\lhead{\raisebox{-0.5\height}{\rule[-.5ex]{0pt}{2ex}\includegraphics[scale=0.125]{img/bitparty_small}}\hspace{1em}{\large E20: BITPARTY}{ -  Proyecto $\mu Search$}}
+
+\renewcommand{\headrulewidth}{0pt} % Tam. separador cabecera
+\renewcommand{\footrulewidth}{0pt}   % Tam. separador pie
+\renewcommand{\headwidth}{6in}       % Anchura cabecera (incluido separador)
+
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+% INICIO DEL DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\hspace{2in}
+\centering
+\scalebox{0.8}{
+  \begin{gantt}[xunitlength=0.15cm,fontsize=\small,titlefontsize=\small,drawledgerline=true]{23}{150}
+	  
+    \begin{ganttitle} % Primer título año: 2014
+      \titleelement{2014}{150}
+    \end{ganttitle}
+	
+    \begin{ganttitle} % Segundo título meses: Ene-Junio
+	  \titleelement{Febrero}{28}
+	  \titleelement{Marzo}{31}
+	  \titleelement{Abril}{30}
+	  \titleelement{Mayo}{31}
+	  \titleelement{Junio}{30}
+    \end{ganttitle}
+	
+    \begin{ganttitle} % Tercer título fechas importantes
+	  \titleelement{ }{25}
+	  \titleelement{28}{3}
+	  \titleelement{ }{7}
+	  \titleelement{10}{3}
+	  \titleelement{ }{7}
+	  \titleelement{20}{3}
+	  \titleelement{ }{4}
+	  \titleelement{27}{3}
+	  \titleelement{ }{13}
+	  \titleelement{10}{3}
+	  \titleelement{ }{11}
+	  \titleelement{24}{3}
+	  \titleelement{ }{1}
+	  \titleelement{30}{3}
+	  \titleelement{ }{9}
+	  \titleelement{8}{2}
+	  \titleelement{ }{5}
+	  \titleelement{15}{3}
+	  \titleelement{ }{9}
+	  \titleelement{26}{3}
+	  \titleelement{ }{3}
+	  \titleelement{2}{3}
+	  \titleelement{ }{24}
+    \end{ganttitle}
+	
+	\ganttgroup{1\textsuperscript{a} iteración}{26}{58}
+    \ganttbar[color=verde_cronograma]{Tarea 0}{25}{13}
+	\ganttbar[color=rojo_cronograma]{Tarea 1}{38}{10}
+	\ganttbar[color=rojo_cronograma]{Población BD}{38}{10}
+    \ganttbar[color=azul_cronograma]{Tarea 2}{48}{7}
+	\ganttbar[color=azul_cronograma]{Tarea 3}{48}{7}
+    \ganttbar[color=azul_cronograma]{Tarea 4}{48}{7}
+	\ganttbar[color=azul_cronograma]{Tarea 5}{48}{7}
+	\ganttbar[color=naranja_cronograma]{Doc. técnica}{48}{23}
+	\ganttbar[color=fucsia_cronograma]{Guía de Usuario}{71}{14}
+	\ganttbar[color=gris_cronograma]{Pruebas}{55}{30}
+	\ganttbar[color=gris_cronograma]{Auditoría interna}{86}{3}
+	
+	\ganttgroup{2\textsuperscript{a} iteración}{86}{40}
+    \ganttbar[color=verde_cronograma]{Tarea 6}{85}{15}
+	\ganttbar[color=verde_cronograma]{Tarea 7}{85}{15}
+    \ganttbar[color=rojo_cronograma]{Tarea 8}{85}{23}
+	\ganttbar[color=rojo_cronograma]{Doc. técnica}{85}{23}
+	\ganttbar[color=azul_cronograma]{Guía de Usuario}{108}{13}
+	\ganttbar[color=naranja_cronograma]{Pruebas}{100}{21}
+	\ganttbar[color=fucsia_cronograma]{Cierre}{121}{6}
+	
+  \end{gantt}
+}
+
+
+\end{document}

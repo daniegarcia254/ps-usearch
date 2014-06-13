@@ -1,0 +1,72 @@
+En la~\cref{fig:diagGantt} se puede observar el calendario del proyecto con cada una de las
+tareas repartidas en las dos iteraciones y con las fechas de entrega parciales correspondientes
+a cada tarea.
+
+\begin{sidewaysfigure}
+\thisfloatpagestyle{empty} 
+\centering
+\scalebox{0.8}{
+  \begin{gantt}[xunitlength=0.15cm,fontsize=\small,titlefontsize=\small,drawledgerline=true]{22}{150}
+	  
+    \begin{ganttitle} % Primer título año: 2014
+      \titleelement{2014}{150}
+    \end{ganttitle}
+	
+    \begin{ganttitle} % Segundo título meses: Ene-Junio
+	  \titleelement{Febrero}{28}
+	  \titleelement{Marzo}{31}
+	  \titleelement{Abril}{30}
+	  \titleelement{Mayo}{31}
+	  \titleelement{Junio}{30}
+    \end{ganttitle}
+	
+    \begin{ganttitle} % Tercer título fechas importantes
+	  \titleelement{ }{25}
+	  \titleelement{28}{3}
+	  \titleelement{ }{7}
+	  \titleelement{10}{3}
+	  \titleelement{ }{7}
+	  \titleelement{20}{3}
+	  \titleelement{ }{4}
+	  \titleelement{27}{3}
+	  \titleelement{ }{13}
+	  \titleelement{10}{3}
+	  \titleelement{ }{11}
+	  \titleelement{24}{3}
+	  \titleelement{ }{13}
+	  \titleelement{8}{2}
+	  \titleelement{ }{5}
+	  \titleelement{15}{3}
+	  \titleelement{ }{9}
+	  \titleelement{26}{3}
+	  \titleelement{ }{3}
+	  \titleelement{2}{3}
+	  \titleelement{ }{24}
+    \end{ganttitle}
+	
+	\ganttgroup{1\textsuperscript{a} iteración}{26}{58}
+    \ganttbar[color=verde_cronograma]{Tarea 0}{25}{13}
+	\ganttbar[color=rojo_cronograma]{Tarea 1}{38}{10}
+	\ganttbar[color=rojo_cronograma]{Población BD}{38}{10}
+    \ganttbar[color=azul_cronograma]{Tarea 2}{48}{7}
+	\ganttbar[color=azul_cronograma]{Tarea 3}{48}{7}
+    \ganttbar[color=azul_cronograma]{Tarea 4}{48}{7}
+	\ganttbar[color=azul_cronograma]{Tarea 5}{48}{7}
+	\ganttbar[color=naranja_cronograma]{Doc. técnica}{48}{23}
+	\ganttbar[color=fucsia_cronograma]{Guía de Usuario}{71}{14}
+	\ganttbar[color=gris_cronograma]{Pruebas}{55}{30}
+	
+	\ganttgroup{2\textsuperscript{a} iteración}{86}{40}
+    \ganttbar[color=verde_cronograma]{Tarea 6}{85}{15}
+	\ganttbar[color=verde_cronograma]{Tarea 7}{85}{15}
+    \ganttbar[color=rojo_cronograma]{Tarea 8}{85}{23}
+	\ganttbar[color=rojo_cronograma]{Doc. técnica}{85}{23}
+	\ganttbar[color=azul_cronograma]{Guía de Usuario}{108}{13}
+	\ganttbar[color=naranja_cronograma]{Pruebas}{100}{21}
+	\ganttbar[color=fucsia_cronograma]{Cierre}{121}{6}
+	
+  \end{gantt}
+}
+\caption{Diagrama de Gantt que ilustra el calendario del proyecto}
+\label{fig:diagGantt}
+\end{sidewaysfigure}

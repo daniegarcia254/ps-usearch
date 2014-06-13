@@ -1,0 +1,353 @@
+\documentclass[11pt,spanish]{article}
+
+%----------------------------------------------------------------------------------------
+% Codificación, y usar una fuente similar a la Palatino (y no Latin Modern Roman)
+\usepackage[utf8]{inputenc} % Acentos, etc.
+\usepackage[spanish]{babel} % Castellano
+\usepackage{tgpagella}      % Fuente similar a Palatino
+\usepackage[T1]{fontenc}
+
+%----------------------------------------------------------------------------------------
+% Imagenes: Que se pongan donde yo quiero
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{floatpag} % Pagina en blanco cuando aparece figuras.
+
+%----------------------------------------------------------------------------------------
+% Cronograma: Diagrama de Gantt
+\usepackage{gantt}
+
+%----------------------------------------------------------------------------------------
+% COLORES
+\usepackage{xcolor}
+
+% Paleta 1
+\definecolor{fucsia_cronograma}{RGB}{105,45,172}
+\definecolor{naranja_cronograma}{RGB}{255,153,0}
+\definecolor{verde_cronograma}{RGB}{87,190,133}
+\definecolor{rojo_cronograma}{RGB}{216,117,117}
+\definecolor{azul_cronograma}{RGB}{51,102,153}
+\definecolor{azul_otro_cronograma}{RGB}{38,192,254}
+\definecolor{gris_cronograma}{RGB}{143,145,148}
+
+
+%----------------------------------------------------------------------------------------
+% METADATOS DEL PDF Y PDF CLICKEABLE
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+
+\hypersetup{
+	pdfauthor={Alberto Berbel Aznar, 
+				Héctor Francia Molinero, 
+				Simón Ortego Parra},
+	pdftitle={Práctica 5},
+	pdfsubject={Proyecto Software. Grado Ing. Informática. EINA. Unizar},
+	pdfkeywords={},
+	pdfcopyright={Copyright (C) 2014 by Alberto Berbel Aznar, 
+				Alberto Berbel Aznar, 
+				Héctor Francia Molinero, 
+				Simón Ortego Parra. All rights reserved.},
+	pdfproducer={PDFLatex},
+	pdfcreator={ps2pdf},
+	colorlinks=false
+}
+
+%----------------------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % borrar todos los ajustes
+
+% Configurar la cabecera: fancyhead, fancyfoot para el pie.
+\fancyhead[L]{\em\ Alberto Berbel, Héctor Francia Molinero, Simón Ortego Parra}
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0pt} % Tam. separador cabecera
+\renewcommand{\footrulewidth}{0pt}   % Tam. separador pie
+
+%----------------------------------------------------------------------------------------
+% INICIO DEL DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+% APARTADO A)x
+\noindent\Huge{Práctica 5}\\[2ex]
+\Large{\bf Apartado A}
+\begin{center}
+    \begin{gantt}[xunitlength=0.15cm,fontsize=\small,titlefontsize=\small,drawledgerline=true]{20}{76}
+        
+        \begin{ganttitle} % Segundo título meses: Ene-Junio
+            \titleelement{\scriptsize\bf S01}{4}
+            \titleelement{\scriptsize\bf S02}{4}
+            \titleelement{\scriptsize\bf S03}{4}
+            \titleelement{\scriptsize\bf S04}{4}
+            \titleelement{\scriptsize\bf S05}{4}
+            \titleelement{\scriptsize\bf S06}{4}
+            \titleelement{\scriptsize\bf S07}{4}
+            \titleelement{\scriptsize\bf S08}{4}
+            \titleelement{\scriptsize\bf S09}{4}
+            \titleelement{\scriptsize\bf S10}{4}
+            \titleelement{\scriptsize\bf S11}{4}
+            \titleelement{\scriptsize\bf S12}{4}
+            \titleelement{\scriptsize\bf S13}{4}
+            \titleelement{\scriptsize\bf S14}{4}
+            \titleelement{\scriptsize\bf S15}{4}
+            \titleelement{\scriptsize\bf S16}{4}
+            \titleelement{\scriptsize\bf S17}{4}
+            \titleelement{\scriptsize\bf S18}{4}
+            \titleelement{\scriptsize\bf S19}{4}
+        \end{ganttitle}
+        
+        	
+        \ganttgroup{ANÁLISIS}{1}{18}  
+        \ganttbar[color=verde_cronograma]{Laura}{0}{20}
+        \ganttbar[color=rojo_cronograma]{César}{0}{20}
+        \ganttbar[color=azul_cronograma]{Pilar}{0}{20}
+        \ganttbar[color=naranja_cronograma]{Adolfo}{0}{20}
+        	
+        \ganttgroup{DISEÑO}{21}{26}  
+        \ganttbar[color=verde_cronograma]{Laura}{20}{28}
+        \ganttbar[color=azul_cronograma]{Pilar}{20}{24}
+        \ganttbar[color=rojo_cronograma]{César}{20}{24}
+        	
+        \ganttgroup{IMPLEMENTACIÓN}{49}{10}  
+        \ganttbar[color=verde_cronograma]{Laura}{48}{12}
+        \ganttbar[color=fucsia_cronograma]{Eloisa}{48}{12}
+        \ganttbar[color=naranja_cronograma]{Adolfo}{48}{12}
+        	
+        \ganttgroup{PRUEBAS}{61}{10}  
+        \ganttbar[color=verde_cronograma]{Fernando}{60}{12} 
+        \ganttbar[color=fucsia_cronograma]{Eloisa}{60}{12} 
+        \ganttbar[color=rojo_cronograma]{Pilar}{60}{12} 	
+        \ganttbar[color=naranja_cronograma]{Elena}{60}{12} 
+    	
+    \end{gantt}
+\end{center}
+\pagebreak
+
+%----------------------------------------------------------------------------------------
+% APARTADO B)
+\Large{\bf Apartado B}
+\begin{center}
+\begin{gantt}[xunitlength=0.15cm,fontsize=\small,titlefontsize=\small,drawledgerline=true]{19}{60}
+
+    \begin{ganttitle} % Segundo título meses: Ene-Junio
+    	\titleelement{\scriptsize\bf S01}{4}
+    	\titleelement{\scriptsize\bf S02}{4}
+    	\titleelement{\scriptsize\bf S03}{4}
+    	\titleelement{\scriptsize\bf S04}{4}
+    	\titleelement{\scriptsize\bf S05}{4}
+    	\titleelement{\scriptsize\bf S06}{4}
+    	\titleelement{\scriptsize\bf S07}{4}
+    	\titleelement{\scriptsize\bf S08}{4}
+    	\titleelement{\scriptsize\bf S09}{4}
+    	\titleelement{\scriptsize\bf S10}{4}
+    	\titleelement{\scriptsize\bf S11}{4}
+    	\titleelement{\scriptsize\bf S12}{4}
+    	\titleelement{\scriptsize\bf S13}{4}
+    	\titleelement{\scriptsize\bf S14}{4}
+    	\titleelement{\scriptsize\bf S15}{4}
+    \end{ganttitle}
+
+	
+    \ganttgroup{ANÁLISIS}{1}{22}  
+    \ganttbar[color=verde_cronograma]{Laura}{0}{16}
+    \ganttbar[color=rojo_cronograma]{César}{0}{16}
+    \ganttbar[color=azul_cronograma]{Pilar}{0}{16}
+    \ganttbar[color=naranja_cronograma]{Adolfo}{0}{24}
+    	
+    \ganttgroup{DISEÑO}{17}{30}  
+    \ganttbar[color=verde_cronograma]{Laura}{16}{12}
+    \ganttbar[color=rojo_cronograma]{César}{16}{32}
+    \ganttbar[color=azul_cronograma]{Pilar}{16}{32}
+    	
+    	
+    \ganttgroup{IMPLEMENTACIÓN}{29}{18}  
+    \ganttbar[color=verde_cronograma]{Eloisa}{28}{4}
+    \ganttbar[color=rojo_cronograma]{Laura}{28}{20}
+    \ganttbar[color=azul_cronograma]{Adolfo}{28}{20}
+    	
+    \ganttgroup{PRUEBAS}{33}{18}  
+    \ganttbar[color=verde_cronograma]{Fernando}{32}{16} 
+    \ganttbar[color=rojo_cronograma]{Elena}{32}{16} 
+    \ganttbar[color=azul_cronograma]{Eloisa}{36}{16} 	
+	
+\end{gantt}
+\end{center}
+\pagebreak
+
+%----------------------------------------------------------------------------------------
+% APARTADO C)
+\Large{\bf Apartado C}
+\begin{center}
+\begin{gantt}[xunitlength=0.15cm,fontsize=\small,titlefontsize=\small,drawledgerline=true]{23}{64}
+
+    \begin{ganttitle} % Segundo título meses: Ene-Junio
+    	\titleelement{\scriptsize\bf S01}{4}
+    	\titleelement{\scriptsize\bf S02}{4}
+    	\titleelement{\scriptsize\bf S03}{4}
+    	\titleelement{\scriptsize\bf S04}{4}
+    	\titleelement{\scriptsize\bf S05}{4}
+    	\titleelement{\scriptsize\bf S06}{4}
+    	\titleelement{\scriptsize\bf S07}{4}
+    	\titleelement{\scriptsize\bf S08}{4}
+    	\titleelement{\scriptsize\bf S09}{4}
+    	\titleelement{\scriptsize\bf S10}{4}
+    	\titleelement{\scriptsize\bf S11}{4}
+    	\titleelement{\scriptsize\bf S12}{4}
+    	\titleelement{\scriptsize\bf S13}{4}
+    	\titleelement{\scriptsize\bf S14}{4}
+    	\titleelement{\scriptsize\bf S15}{4}
+    	\titleelement{\scriptsize\bf S16}{4}
+    \end{ganttitle}
+
+	
+    \ganttgroup{ANÁLISIS}{1}{22}  
+    \ganttbar[color=verde_cronograma]{Laura}{0}{4}
+    \ganttbar[color=rojo_cronograma]{César}{0}{12}
+    \ganttbar[color=azul_cronograma]{Pilar}{0}{20}
+    \ganttbar[color=naranja_cronograma]{Adolfo}{0}{24}
+    \ganttbar[color=verde_cronograma]{Laura}{12}{12}
+    	
+    \ganttgroup{DISEÑO}{21}{30}  
+    \ganttbar[color=rojo_cronograma]{César}{20}{32}
+    \ganttbar[color=verde_cronograma]{Laura}{24}{24}
+    \ganttbar[color=azul_cronograma]{Pilar}{28}{20}
+    	
+    	
+    \ganttgroup{IMPLEMENTACIÓN}{37}{18}  
+    \ganttbar[color=verde_cronograma]{Laura}{48}{8}
+    \ganttbar[color=naranja_cronograma]{Adolfo}{36}{20}
+    \ganttbar[color=fucsia_cronograma]{Eloisa}{36}{4}
+    \ganttbar[color=fucsia_cronograma]{Eloisa}{48}{8}
+    	
+    \ganttgroup{PRUEBAS}{41}{18}  
+    \ganttbar[color=fucsia_cronograma]{Eloisa}{56}{4} 
+    \ganttbar[color=gris_cronograma]{Fernando}{40}{16} 
+    \ganttbar[color=rojo_cronograma]{Elena}{40}{8}
+    \ganttbar[color=rojo_cronograma]{Elena}{56}{4} 
+    \ganttbar[color=azul_cronograma]{Pilar}{48}{12} 	
+	
+	
+\end{gantt}
+\end{center}
+\pagebreak
+
+%----------------------------------------------------------------------------------------
+% APARTADO D)
+\Large{\bf Apartado D}
+\begin{center}
+\begin{gantt}[xunitlength=0.15cm,fontsize=\small,titlefontsize=\small,drawledgerline=true]{22}{68}
+
+    \begin{ganttitle} % Segundo título meses: Ene-Junio
+	  \titleelement{\scriptsize\bf S01}{4}
+	  \titleelement{\scriptsize\bf S02}{4}
+	  \titleelement{\scriptsize\bf S03}{4}
+	  \titleelement{\scriptsize\bf S04}{4}
+	  \titleelement{\scriptsize\bf S05}{4}
+	  \titleelement{\scriptsize\bf S06}{4}
+	  \titleelement{\scriptsize\bf S07}{4}
+	  \titleelement{\scriptsize\bf S08}{4}
+	  \titleelement{\scriptsize\bf S09}{4}
+	  \titleelement{\scriptsize\bf S10}{4}
+	  \titleelement{\scriptsize\bf S11}{4}
+	  \titleelement{\scriptsize\bf S12}{4}
+	  \titleelement{\scriptsize\bf S13}{4}
+	  \titleelement{\scriptsize\bf S14}{4}
+	  \titleelement{\scriptsize\bf S15}{4}
+	  \titleelement{\scriptsize\bf S16}{4}
+	  \titleelement{\scriptsize\bf S17}{4}
+    \end{ganttitle}
+
+	
+	\ganttgroup{ANÁLISIS}{1}{22}  
+	\ganttbar[color=verde_cronograma]{Laura}{0}{4}
+	\ganttbar[color=rojo_cronograma]{César}{0}{12}
+    \ganttbar[color=azul_cronograma]{Pilar}{0}{20}
+	\ganttbar[color=naranja_cronograma]{Adolfo}{0}{24}
+	\ganttbar[color=verde_cronograma]{Laura}{12}{12}
+	
+	\ganttgroup{DISEÑO}{21}{30}  
+	\ganttbar[color=rojo_cronograma]{César}{20}{32}
+	\ganttbar[color=verde_cronograma]{Laura}{24}{24}
+	\ganttbar[color=azul_cronograma]{Pilar}{28}{20}
+	
+	
+	\ganttgroup{IMPLEMENTACIÓN}{37}{18}  
+	\ganttbar[color=verde_cronograma]{Laura}{48}{8}
+	\ganttbar[color=naranja_cronograma]{Adolfo}{36}{20}
+    \ganttbar[color=fucsia_cronograma]{Eloisa}{36}{4}
+    \ganttbar[color=fucsia_cronograma]{Eloisa}{48}{8}
+	
+	\ganttgroup{PRUEBAS}{45}{18}  
+    \ganttbar[color=fucsia_cronograma]{Eloisa}{56}{4} 
+    \ganttbar[color=gris_cronograma]{Fernando}{44}{16} 
+	\ganttbar[color=rojo_cronograma]{Elena}{44}{4}
+	\ganttbar[color=rojo_cronograma]{Elena}{56}{8} 
+    \ganttbar[color=azul_cronograma]{Pilar}{48}{12} 	
+	
+	
+  \end{gantt}
+\end{center}
+\pagebreak
+
+%----------------------------------------------------------------------------------------
+% APARTADO E)
+\Large{\bf Apartado E}
+\begin{center}
+\begin{gantt}[xunitlength=0.15cm,fontsize=\small,titlefontsize=\small,drawledgerline=true]{24}{68}
+
+    \begin{ganttitle} % Segundo título meses: Ene-Junio
+	  \titleelement{\scriptsize\bf S01}{4}
+	  \titleelement{\scriptsize\bf S02}{4}
+	  \titleelement{\scriptsize\bf S03}{4}
+	  \titleelement{\scriptsize\bf S04}{4}
+	  \titleelement{\scriptsize\bf S05}{4}
+	  \titleelement{\scriptsize\bf S06}{4}
+	  \titleelement{\scriptsize\bf S07}{4}
+	  \titleelement{\scriptsize\bf S08}{4}
+	  \titleelement{\scriptsize\bf S09}{4}
+	  \titleelement{\scriptsize\bf S10}{4}
+	  \titleelement{\scriptsize\bf S11}{4}
+	  \titleelement{\scriptsize\bf S12}{4}
+	  \titleelement{\scriptsize\bf S13}{4}
+	  \titleelement{\scriptsize\bf S14}{4}
+	  \titleelement{\scriptsize\bf S15}{4}
+	  \titleelement{\scriptsize\bf S16}{4}
+	  \titleelement{\scriptsize\bf S17}{4}
+    \end{ganttitle}
+
+	
+	\ganttgroup{ANÁLISIS}{1}{22}  
+	\ganttbar[color=verde_cronograma]{Laura}{0}{4}
+	\ganttbar[color=rojo_cronograma]{César}{0}{12}
+    \ganttbar[color=azul_cronograma]{Pilar}{0}{20}
+	\ganttbar[color=naranja_cronograma]{Adolfo}{0}{24}
+	\ganttbar[color=verde_cronograma]{Laura}{12}{4}
+	\ganttbar[color=azul_otro_cronograma]{Eugenio}{4}{12}
+	
+	\ganttgroup{DISEÑO}{23}{20}  
+	\ganttbar[color=rojo_cronograma]{César}{28}{16}
+	\ganttbar[color=verde_cronograma]{Laura}{24}{12}
+	\ganttbar[color=azul_cronograma]{Pilar}{36}{8}
+	\ganttbar[color=azul_otro_cronograma]{Eugenio}{24}{20}
+	
+	\ganttgroup{IMPLEMENTACIÓN}{37}{10}  
+	\ganttbar[color=verde_cronograma]{Laura}{36}{12}
+	\ganttbar[color=naranja_cronograma]{Adolfo}{36}{12}
+    \ganttbar[color=fucsia_cronograma]{Eloisa}{36}{8}
+	
+	\ganttgroup{PRUEBAS}{41}{14}   
+    \ganttbar[color=verde_cronograma]{Fernando}{40}{4}
+    \ganttbar[color=verde_cronograma]{Fernando}{48}{8}
+	\ganttbar[color=rojo_cronograma]{Elena}{40}{16} 
+    \ganttbar[color=azul_cronograma]{Pilar}{44}{12} 	
+	\ganttbar[color=naranja_cronograma]{Luisa}{40}{12}
+	
+  \end{gantt}
+\end{center}
+
+
+\end{document}
+

@@ -1,0 +1,334 @@
+\documentclass[11pt,spanish]{article}
+
+%----------------------------------------------------------------------------------------
+% Codificación, y usar una fuente similar a la Palatino (y no Latin Modern Roman)
+\usepackage[utf8]{inputenc} % Acentos, etc.
+\usepackage[spanish]{babel} % Castellano
+\usepackage{tgpagella}      % Fuente similar a Palatino
+\usepackage[T1]{fontenc}
+
+%----------------------------------------------------------------------------------------
+% TODO
+\usepackage{color}
+\newcommand{\TODO}[1]{\textcolor{red}{\textbf{\MakeUppercase{#1}}}}
+
+%----------------------------------------------------------------------------------------
+% Enumerate with dash instead of period
+\usepackage{enumitem}
+
+\makeatletter
+\def\twodigits#1{\expandafter\@twodigits\csname c@#1\endcsname}
+\def\@twodigits#1{%
+  \ifnum#1<10 0\fi
+  \number#1}
+\makeatother
+\AddEnumerateCounter{\twodigits}{\@twodigits}{100}
+
+%----------------------------------------------------------------------------------------
+% Indentar primera línea párrafos
+\usepackage{indentfirst}
+
+%----------------------------------------------------------------------------------------
+% Tablas
+\usepackage{eurosym}
+\usepackage{multirow}
+
+%----------------------------------------------------------------------------------------
+% MODIFICAR EL ESTILO DE LAS SECCIONES 
+\usepackage{titlesec}
+\titleformat{\section}{\bfseries\Large}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\bfseries\large}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\bfseries\large}{\thesubsubsection}{0.8em}{}
+\newcommand{\sectionbreak}{\clearpage} % Empezar secciones en nueva página
+
+
+%----------------------------------------------------------------------------------------
+% MODIFICAR EL ESTILO DEL ABSTRACT
+\addto{\captionsspanish}{\renewcommand{\abstractname}{\bfseries\large{Resumen}}}
+\renewenvironment{abstract}
+ {\small
+  \begin{center}
+  \bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  \end{center}
+  \list{}{%
+    \setlength{\leftmargin}{7.5mm}% <---------- Cambiar márgenes
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+ 
+%----------------------------------------------------------------------------------------
+% Footnotes without line
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+% Imagenes: Que se pongan donde yo quiero
+\usepackage{graphicx}
+%\usepackage{float}
+\usepackage[linecolor=colComment,linewidth=0.65pt]{mdframed}
+
+\usepackage{floatpag} % Pagina en blanco cuando aparece figuras.
+
+\DeclareGraphicsExtensions{.svg,.eps,.ps,.pdf,.png,.jpg,.jpeg}
+\addto{\captionsspanish}{\renewcommand{\listfigurename}{\bfseries\Large Figuras}}
+
+%----------------------------------------------------------------------------------------
+% Curriculum Vitae
+\usepackage{currvita} 
+\setlength{\cvlabelwidth}{40mm}
+
+%----------------------------------------------------------------------------------------
+% Cronograma: Diagrama de Gantt
+\usepackage{gantt}
+% Cronograma girado 90º
+\usepackage{rotating}
+\usepackage{fixltx2e} % poder poner "1ª" en modo texto (no matemático)
+
+%----------------------------------------------------------------------------------------
+% COLORES
+\usepackage{xcolor}
+
+% Paleta 1
+\definecolor{fucsia_cronograma}{RGB}{105,45,172}
+\definecolor{naranja_cronograma}{RGB}{255,153,0}
+\definecolor{verde_cronograma}{RGB}{87,190,133}
+\definecolor{rojo_cronograma}{RGB}{216,117,117}
+\definecolor{azul_cronograma}{RGB}{51, 102, 153}
+\definecolor{gris_cronograma}{RGB}{143,145,148}
+%----------------------------------------------------------------------------------------
+% Comenzar con numeracion romana (I,II,III,IV,...)
+\renewcommand{\thepage}{\roman{page}}
+
+%----------------------------------------------------------------------------------------
+% Definir el titulo
+
+\newcommand{\nombreDelProyecto}{$\mu Search$}
+
+% Comando para multiples saltos de linea
+\newcommand{\singlelinebreak}{\\[\baselineskip]}
+\newcommand{\multiplelinebreak}[1]{\\[#1\baselineskip]}
+\newlength{\drop}
+
+\newcommand*{\titulo}{\begingroup
+\thispagestyle{empty}
+\drop = 0.13\textheight
+\centering
+\vfill
+\vspace*{\drop}
+\includegraphics[scale=0.25]{img/bitparty_big}\singlelinebreak
+{\Huge\bf BITPARTY}\multiplelinebreak{2}
+{\huge Proyecto \nombreDelProyecto}\multiplelinebreak{2}
+{\Large Versión  1.0}\multiplelinebreak{1}
+{\Large 03/2014}
+\vfill
+\vspace*{\drop}
+\endgroup}
+
+
+%----------------------------------------------------------------------------------------
+% METADATOS DEL PDF Y PDF CLICKEABLE
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+
+\hypersetup{
+	pdfauthor={Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra},
+	pdftitle={E20 - Propuesta del proyecto},
+	pdfsubject={Proyecto Software. Grado Ing. Informática. EINA. Unizar},
+	pdfkeywords={},
+	pdfcopyright={Copyright (C) 2014 by Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra. All rights reserved.},
+	pdfproducer={PDFLatex},
+	pdfcreator={ps2pdf},
+	colorlinks=false
+}
+
+\usepackage[capitalise]{cleveref} % load after hyperref package
+\crefdefaultlabelformat{\textbf{#2#1#3}} % boldface only the number
+
+\crefname{figure}{figura}{figuras}
+\Crefname{figure}{Figura}{Figuras}
+
+\crefname{listing}{algoritmo}{algoritmos}
+\Crefname{listing}{Algoritmo}{Algoritmos}
+
+\crefname{section}{sección}{secciones}
+\Crefname{section}{Sección}{Secciones}
+
+%----------------------------------------------------------------------------------------
+% FANCY HEADER
+\usepackage[head=34pt]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % borrar todos los ajustes
+
+% Configurar la cabecera: fancyhead, fancyfoot para el pie.
+\fancyhead[L]{\nouppercase\leftmark}
+\fancyhead[R]{\nouppercase\rightmark\hspace{0.5em}}
+\fancyfoot[C]{-- \thepage\ --}
+
+% Cabecera parte derecha: número y título de sección, subsección, etc.
+\renewcommand{\sectionmark}[1]{\markright{\small{{\bf \thesection} - #1}}}
+\renewcommand{\subsectionmark}[1]{\markright{\small{{\bf \thesubsection} - #1}}}
+\renewcommand{\subsubsectionmark}[1]{\markright{\small{{\bf \thesubsubsection} - #1}}}
+
+% Cabecera parte izquierda: Nombre de la empresa (logo) y nombre del proyecto
+\lhead{\raisebox{-0.5\height}{\rule[-.5ex]{0pt}{2ex}\includegraphics[scale=0.125]{img/bitparty_small}}\hspace{1em}{\large\nombreDelProyecto}}
+
+\renewcommand{\headrulewidth}{0.6pt} % Tam. separador cabecera
+\renewcommand{\footrulewidth}{0pt}   % Tam. separador pie
+\renewcommand{\headwidth}{6in}       % Anchura cabecera (incluido separador)
+
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+% INICIO DEL DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+% PORTADA: TÍTULO
+%----------------------------------------------------------------------------------------
+\begin{document}
+\titulo
+\clearpage
+
+
+%----------------------------------------------------------------------------------------
+% ABSTRACT: RESUMEN EJECUTIVO
+%----------------------------------------------------------------------------------------
+\thispagestyle{empty}
+\null\vspace{\fill}
+
+\begin{abstract}
+\input{tex/00_resumen_ejecutivo}
+\end{abstract}
+
+
+\vspace{\fill}
+\newpage
+
+
+%----------------------------------------------------------------------------------------
+% ÍNDICE
+%----------------------------------------------------------------------------------------	
+\tableofcontents
+\clearpage
+
+
+% Continuar con numeracion romana (1,2,3...) 
+\renewcommand{\thepage}{\arabic{page}}
+%----------------------------------------------------------------------------------------
+% 1. IDENTIFICACIÓN DEL PROYECTO
+%----------------------------------------------------------------------------------------
+\section{Identificación del proyecto}
+\input{tex/01_identificacion_del_proyecto}
+
+%----------------------------------------------------------------------------------------
+% 2. DATOS DEL LICITADOR
+% 2.1 DENOMINACIÓN DE LA EMPRESA
+% 2.2 HISTORIAL DEL EQUIPO
+%----------------------------------------------------------------------------------------
+\section{Datos del licitador}
+\input{tex/02_0_datos_del_licitador}
+
+\subsection{Denominación de la empresa}
+\input{tex/02_1_denominacion_de_la_empresa}
+
+\subsection{Historial del equipo}
+\input{tex/02_2_historial_del_equipo}
+
+
+%----------------------------------------------------------------------------------------
+% 3. OBJETO DE LA PROPUESTA
+%----------------------------------------------------------------------------------------
+\section{Objeto de la propuesta}
+\input{tex/03_objeto_de_la_propuesta}
+
+
+%----------------------------------------------------------------------------------------
+% 4. REQUISITOS DEL SISTEMA
+%----------------------------------------------------------------------------------------
+\section{Requisitos del sistema}
+\input{tex/04_requisitos_del_sistema}
+
+
+%----------------------------------------------------------------------------------------
+% 5. DESCRIPCIÓN TÉCNICA DE LA SOLUCIÓN PROPUESTA
+% 5.1. ESQUEMA DE LA ARQUITECTURA
+% 5.2. TECNOLOGÍAS 
+%----------------------------------------------------------------------------------------
+\section{Descripción técnica de la solución}
+\input{tex/05_0_descripcion_tecnica_de_la_solucion}
+
+\subsection{Esquema de la arquitectura}
+\input{tex/05_1_esquema_de_la_arquitectura}
+
+\subsection{Tecnologías}
+\input{tex/05_2_tecnologias}
+
+
+%----------------------------------------------------------------------------------------
+% 6. METODOLOGÍA DE GESTIÓN Y PLANIFICACIÓN
+% 6.1. FASES Y ACTIVIDADES DEL PROYECTO
+% 6.2. RECURSOS HUMANOS
+% 6.2.1. ALBERTO BERBEL AZNAR
+% 6.2.2. JAVIER BRIZ ALASTRUÉ
+% 6.2.3. HÉCTOR FRANCIA MOLINERO
+% 6.2.4. DANIEL GARCÍA PÁEZ
+% 6.2.5. ALEJANDRO GRACIA MATEO
+% 6.2.6. SIMÓN ORTEGO PARRA
+% 6.3. CRONOGRAMA
+% 6.4. PRESUPUESTO
+%----------------------------------------------------------------------------------------
+\section{Metodología de gestión y planificación del proyecto}
+\input{tex/06_0_metodologia_de_gestion_y_planificacion}
+
+\subsection{Fases y actividades del proyecto}
+\input{tex/06_1_fases_y_actividades_del_proyecto}
+
+\newpage
+\subsection{Recursos humanos}
+\input{tex/06_2_recursos_humanos}
+
+\subsubsection{Alberto Berbel Aznar}
+\input{tex/06_2_1_alberto_cv}
+
+\newpage
+\subsubsection{Javier Briz Alastrué}
+\input{tex/06_2_2_javier_cv}
+
+\newpage
+\subsubsection{Héctor Francia Molinero}
+\input{tex/06_2_3_hector_cv}
+
+\newpage
+\subsubsection{Daniel García Páez}
+\input{tex/06_2_4_daniel_cv}
+
+\newpage
+\subsubsection{Alejandro Gracia Mateo}
+\input{tex/06_2_5_alejandro_cv}
+
+\newpage
+\subsubsection{Simón Ortego Parra}
+\input{tex/06_2_6_simon_cv}
+
+\newpage
+\subsection{Cronograma}
+\input{tex/06_3_cronograma}
+
+\subsection{Presupuesto}
+\input{tex/06_4_presupuesto}
+
+\end{document}

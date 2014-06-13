@@ -1,0 +1,23 @@
+﻿ASIGNACIÓN DE TAREAS PROPUESTA DE PROYECTO
+	
+	0. Resumen ejecutivo --> DANIEL Y SIMÓN
+	
+	1. Identificación del Proyecto --> DANIEL --> DONE
+	
+	2. Datos del licitador
+		2.1 Denominación de la empresa
+		2.1 Breve historial y currículum del EQUIPO  --> ALEJANDRO --> DONE
+		
+	3. Objeto de la propuesta  --> SIMÓN
+	
+	4. Requisitos del sistema --> HÉCTOR  --> DONE
+	
+	5. Descripción técnica de la solución
+		5.1 Esquema de la arquitectura --> ALBERTO  --> DONE
+		5.2 Tecnologías --> JAVIER  --> DONE
+		
+	6. Metodología de gestión y planificación del proyecto
+		6.1 Fases y actividades del proyecto  --> DANIEL  --> DONE
+		6.2 Recursos humanos  --> ALEJANDRO  --> DONE
+		6.3 Cronograma  --> SIMÓN
+		6.4 Presupuesto  --> DANIEL

@@ -12,10 +12,14 @@ Desarrollada en PHP a partir del framework CodeIgniter.
 
 Estructura de directorios
 	
-	-	/application - aplicación web basada en codeigniter
-	-	/img - ficheros de imagen de la web
-	-	/system - codeigniter
-	-	styel.css - hoja de estilo de la aplicación
+	-	/src	- CÓDIGO FUENTE
+	-	/src/application - aplicación web basada en codeigniter
+	-	/src/img - ficheros de imagen de la web
+	-	/src/system - codeigniter
+	-	/src/style.css - hoja de estilo de la aplicación
+	
+	-	/documentacion	- DOCUMENTACIÓN PROYECTO
+	-	/documentacion/memoria_tecnica_final/documento/memoria_tecnica_final	-	MEMORIA PROYECTO
 	
 
 

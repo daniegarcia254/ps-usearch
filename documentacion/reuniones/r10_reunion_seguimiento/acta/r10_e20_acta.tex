@@ -1,0 +1,239 @@
+\documentclass[10pt,spanish]{article}
+
+%----------------------------------------------------------------------------------------
+% Codificación, y usar una fuente similar a la Palatino (y no Latin Modern Roman)
+\usepackage[utf8]{inputenc} % Acentos, etc.
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel} % Castellano
+\usepackage{tgpagella}      % Fuente similar a Palatino
+
+%----------------------------------------------------------------------------------------
+% MÁRGENES (menores que en otro tipo de documentos)
+\addtolength{\oddsidemargin}{-.375in}
+\addtolength{\evensidemargin}{-.375in}
+\addtolength{\textwidth}{1.25in}
+
+%\addtolength{\topmargin}{-.375in}
+%\addtolength{\textheight}{.5in}
+
+%----------------------------------------------------------------------------------------
+% COLORES
+\usepackage{xcolor,colortbl} % Colores personalizados y color fondo tablas
+\definecolor{grisCabeceraTabla}{RGB}{220,220,220}
+\definecolor{grisHeader}{RGB}{180,180,180}
+	
+%----------------------------------------------------------------------------------------
+% TABLAS	  
+%\usepackage{supertabular} % Tablas multipágina
+\linespread {1.4} % Tamaño que ocupa una línea (celda)
+
+\usepackage{array}
+\usepackage{longtable}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength{\columnsep}{0em}
+
+% Definir los estilos de las celdas para indentar el texto
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+% Filas con columnas multiples
+\newcommand{\mc}[2]{\multicolumn{#1}{|C{\dimexpr 1\linewidth-2\tabcolsep}|}{#2}}
+
+% Colores de lineas de las tablas
+%\arrayrulecolor{grisCabeceraTabla}
+\arrayrulecolor{grisHeader}
+
+% Eliminar espacio previo en lista de ítems
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+% Comandos especiales para crear items dentro de tabla y poder hacer
+% una tabla de multiples paginas y que se pueda realizar el salto de
+% pagina en cualquier punto.
+\usepackage{scrextend}
+\newenvironment{lvlOneItem}
+	{\begin{addmargin}[2.5em]{1em}
+	\vspace{-1em}
+	\hspace{-1em}$\bullet$\hspace{0.5em}}
+	{\vspace{-2em}\end{addmargin}}
+\newenvironment{lvlTwoItem}
+	{\begin{addmargin}[4em]{1em}
+	\vspace{-1em}
+	\hspace{-1em}$\circ$\hspace{0.5em}}
+	{\vspace{-2em}\end{addmargin}}
+
+	
+\newcommand{\itemNvlUno}[1]{\begin{lvlOneItem}{#1}\end{lvlOneItem}\\}
+\newcommand{\itemNvlDos}[1]{\begin{lvlTwoItem}{#1}\end{lvlTwoItem}\\}
+\newcommand{\espacioSubtabla}{\\[0.5ex]}
+\newcommand{\cabeceraTabla}[1]{\rowcolor{grisCabeceraTabla}{\bf #1}}
+
+%----------------------------------------------------------------------------------------
+% METADATOS DEL PDF Y PDF CLICKEABLE
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+
+% DATOS A CAMBIAR
+\newcommand{\numeroDeReunion}{10}
+\newcommand{\tituloReunion}{\bf Reunión de seguimiento}
+\newcommand{\nombreDelProyecto}{$\mu$Search}
+
+\hypersetup{
+	pdfauthor={Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra},
+	pdftitle={E20 - Acta R\numeroDeReunion: \tituloReunion},
+	pdfsubject={Proyecto Software. Grado Ing. Informática. EINA. Unizar},
+	pdfkeywords={},
+	pdfcopyright={Copyright (C) 2014 by Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra. All rights reserved.},
+	pdfproducer={PDFLatex},
+	pdfcreator={ps2pdf},
+	colorlinks=false
+}
+
+%----------------------------------------------------------------------------------------
+% Encabezados y pies de pagina : FancyHdr
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % borrar todos los ajustes
+\setlength{\headheight}{15pt}
+\usepackage{lastpage} % Para poner total de paginas en el footer, ej: pag 1/4
+
+\fancyhead[L]{\color{grisHeader}{\large BITPARTY}}
+\fancyhead[R]{\color{grisHeader}E20 - Acta R\numeroDeReunion \\ \nombreDelProyecto}
+\fancyfoot[R]{\color{grisHeader}\thepage/\pageref*{LastPage}}
+
+% Modifica el ancho de las líneas de cabecera y pie
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headsep}{0.6in}
+\renewcommand{\headwidth}{6in}
+
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+% INICIO DEL DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+	
+\begin{center}	
+\Large{Acta de Reunión Nº \numeroDeReunion\hspace{0.25em}-\hspace{0.25em}\tituloReunion}
+\end{center}
+\vspace{1.5em}
+
+% PRIMERA TABLA: INFORMACIÓN BÁSICA
+\begin{longtable}{ | L{\dimexpr 0.420\linewidth-2\tabcolsep} |
+				     L{\dimexpr 0.570\linewidth-2\tabcolsep} | }
+\hline % ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}
+\mc{2}{\bf Información básica}  \\
+%\hline % ------------------------------------------------------------------------
+%{\bf Cliente} & Nombre del cliente (por definir o no es necesario ?)  \\
+\hline % ------------------------------------------------------------------------
+{\bf Proyecto} & $\mu$Search \\
+\hline % ------------------------------------------------------------------------
+{\bf Fecha y hora de reunión} & 09/04/14 - 20:00 \\
+\hline % ------------------------------------------------------------------------
+{\bf Lugar} & Seminario 21, Edif. Ada Byron. EINA. Unizar \\
+\hline % ------------------------------------------------------------------------
+{\bf Tipo de reunión} & Estándar \\
+\hline % ------------------------------------------------------------------------
+\end{longtable}
+
+
+%----------------------------------------------------------------------------------------
+% SEGUNDA TABLA - ASISTENTES
+\begin{longtable}{ | C{\dimexpr 0.070\linewidth-2\tabcolsep} |
+                     L{\dimexpr 0.350\linewidth-2\tabcolsep} |
+                     C{\dimexpr 0.370\linewidth-2\tabcolsep} |
+                     C{\dimexpr 0.200\linewidth-2\tabcolsep} | }
+\hline % ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}
+\mc{4}{\bf Convocados} \\
+\hline % ------------------------------------------------------------------------
+{\bf Nº} & {\bf Nombre y Apellidos} & {\bf Cargo} & {\bf Rol} \\
+\hline % ------------------------------------------------------------------------
+{\bf 1} & Alberto Berbel Aznar & Verificación y validación & Secretario  \\
+\hline % ------------------------------------------------------------------------
+{\bf 2} & Javier Briz Alastrué & Gestor de configuraciones & Cronometrador  \\
+\hline % ------------------------------------------------------------------------
+{\bf 3} & Héctor Francia Molinero & Gestor de calidad & Observador  \\
+\hline % ----------------------------------------------------
+{\bf 4} & Daniel García Páez & Director del proyecto & Director \\
+\hline % ------------------------------------------------------------------------
+{\bf 5} & Alejandro Gracia Mateo & Gestor de planificación & Planificador \\
+\hline % ------------------------------------------------------------------------
+{\bf 6} & Simón Ortego Parra & Gestor de desarrollo & --  \\
+\hline % ------------------------------------------------------------------------
+\end{longtable}
+
+%----------------------------------------------------------------------------------------
+% CUARTA TABLA - OBJETIVOS, CUERPO DE LA REUNIÓN, DECISIONES TOMADAS, ...
+\begin{longtable}{ | C{\dimexpr\linewidth-2\tabcolsep} | }
+\hline % ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}\textbf{Objetivo de la reunión} \\
+\hline % ------------------------------------------------------------------------
+\endfirsthead
+\hline % ------------------------------------------------------------------------
+\endhead
+\espacioSubtabla
+\hline % ------------------------------------------------------------------------
+\endfoot
+\hline % ------------------------------------------------------------------------
+\endlastfoot
+
+\itemNvlUno{Reunión de seguimiento para poner al día todas las tareas realizadas hasta el momento, así como las horas invertidas en el proyecto por cada miembro del grupo. El objetivo final es, a partir de lo anterior, realizar un reparto de tareas cara a las vacaciones de Semana Santa para volver de las mismas con la primera iteración del proyecto concluida.} \\
+
+\hline % ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}\textbf{Cuerpo de la reunión} \\
+\hline % ------------------------------------------------------------------------
+
+\itemNvlUno{Cada uno de los asistentes se presentó a la hora.}
+\itemNvlUno{Debido a la llegada tardía del Secretario de la reunión, se realizó un pequeño ajuste sobre la marcha en los roles de la reunión respecto a los previstos en la convocatoria de la misma.}
+\itemNvlUno{Se realizó una revisión de las horas invertidas por cada miembro del grupo hasta el momento, para poder compararlas con las previstas en la planificación y propuesta de proyecto, y a partir de dicha informació poder realizar un reparto de tareas más equilibrado.}
+\itemNvlUno{Se realizó un revisión de las últimas modificaciones hechas en el proyecto, poniendo en común ideas sobre las mismas y buscando unanimidad en las decisiones tomadas.}
+\itemNvlUno{Se realizó una revisión del estado en el que se econtraban todas las tareas que conforman la primera iteración del proyecto, es decir, el avance individual de cada miembro del grupo en sus tareas asignadas hasta el momento. De esta forma, comparando dicha revisión con los resultados esperados y planificados en la propuesta de proyecto, se pudieron establecer las tareas pendientes para el final de la primera iteración del proyecto.}
+\itemNvlUno{Se realizó una propuesto o tormenta de ideas para introducir en el documento de riesgos encontrados en el proyecto.}
+\\
+
+\hline % ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}\textbf{Decisiones tomadas} \\
+\hline % ------------------------------------------------------------------------
+\itemNvlUno{A partir de la información obtenida de las anteriores revisiones se acordaron como tareas pendientes las siguientes:}
+\itemNvlDos{Creación y cumplimentación del documento para el repositorio de lecciones aprendidas.}
+\itemNvlDos{Realización por parte del miembro del grupo Alejandro Gracia de la gráfica o documento de horas y trabajo realizado/pendiente, con la intención de tener registro de ello.}
+\itemNvlDos{Finalización de la documentación técnica de la primera iteración.}
+\itemNvlDos{Realización de la guía de usuario abarcando todas las funcionalidades activas de la aplicación en la primera iteración.}
+\itemNvlDos{Realización de las pruebas para la primera iteración. Incluyendo el pasar el código \textit{html} a través del \textit{W3C Validator}.}
+\itemNvlDos{Finalización de la población de la base de datos, cada componente del grupo insertará cinco microcontroladores.}
+\itemNvlUno{De la tormenta de ideas inicial para el documento de riesgos se decidieron incluir los siguientes riegos iniciales:}
+\itemNvlDos{De los integrantes del grupo, sólo Javier sabe trabajar bien con \textit{PHP} y \textit{Codeigniter}. En caso de que tuviera que ausentarse, implicaría un aumento de los esfuerzos necesarios para la realización de las tareas ya planificadas, y un riesgo alto de salirse de la planificación establecida.}
+\itemNvlDos{De los integrantes del grupo, sólo Simón y Alejandro saben realizar correctamente las plantillas para la documentación utilizando Latex. Es decir, dependemos de ellos para realizar las tareas que impliquen su uso, y sería un cambio drástico en la documentación el tener que cambiar de editor.}
+\itemNvlDos{Héctor Francia, se ha encargado de realizar los logos para el proyecto y por lo tanto, en el caso de que fuese necesario modificar los logos y él se ausentara del grupo, supondría un aumento de los esfuerzos para la realización de estas tareas, pues es el único experto en el campo gráfico.}
+\itemNvlDos{Tenemos sólo un servidor para realizar las pruebas.}
+\itemNvlUno{Se decide que los fallos de los test de unidades serán registraso en la \textit{Wiki} del proyecto.}\\
+% ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}\textbf{Temas pendientes} \\
+\hline % ------------------------------------------------------------------------
+
+\itemNvlUno{Quedan pendientes realizar todas las tareas asignadas para el final de la primera iteración.}\\
+	
+\hline % ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}\textbf{Próxima reunión (práctica) prevista} \\
+\hline % ------------------------------------------------------------------------
+Viernes 25 de Abril del 2014 a las 12:00 \\
+\end{longtable}
+
+
+\end{document}

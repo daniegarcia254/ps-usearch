@@ -1,0 +1,277 @@
+\documentclass[11pt,spanish]{article}
+
+%----------------------------------------------------------------------------------------
+% Codificación, y usar una fuente similar a la Palatino (y no Latin Modern Roman)
+\usepackage[utf8]{inputenc} % Acentos, etc.
+\usepackage[spanish]{babel} % Castellano
+\usepackage{tgpagella}      % Fuente similar a Palatino
+\usepackage[T1]{fontenc}
+
+%----------------------------------------------------------------------------------------
+% TODO
+\usepackage{color}
+\newcommand{\TODO}[1]{\textcolor{red}{\textbf{\MakeUppercase{#1}}}}
+
+%----------------------------------------------------------------------------------------
+% Enumerate with dash instead of period
+\usepackage{enumitem}
+
+\makeatletter
+\def\twodigits#1{\expandafter\@twodigits\csname c@#1\endcsname}
+\def\@twodigits#1{%
+  \ifnum#1<10 0\fi
+  \number#1}
+\makeatother
+\AddEnumerateCounter{\twodigits}{\@twodigits}{100}
+
+%----------------------------------------------------------------------------------------
+% Indentar primera línea párrafos
+\usepackage{indentfirst}
+
+%----------------------------------------------------------------------------------------
+% Tablas
+\usepackage{eurosym}
+\usepackage{multirow}
+
+%----------------------------------------------------------------------------------------
+% MODIFICAR EL ESTILO DE LAS SECCIONES 
+\usepackage{titlesec}
+\titleformat{\section}{\bfseries\Large}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\bfseries\large}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\bfseries\large}{\thesubsubsection}{0.8em}{}
+\newcommand{\sectionbreak}{\clearpage} % Empezar secciones en nueva página
+
+
+%----------------------------------------------------------------------------------------
+% MODIFICAR EL ESTILO DEL ABSTRACT
+\addto{\captionsspanish}{\renewcommand{\abstractname}{\bfseries\large{Resumen}}}
+\renewenvironment{abstract}
+ {\small
+  \begin{center}
+  \bfseries \abstractname\vspace{-.5em}\vspace{0pt}
+  \end{center}
+  \list{}{%
+    \setlength{\leftmargin}{7.5mm}% <---------- Cambiar márgenes
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \item\relax}
+ {\endlist}
+ 
+%----------------------------------------------------------------------------------------
+% Footnotes without line
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+%----------------------------------------------------------------------------------------
+% Imagenes: Que se pongan donde yo quiero
+\usepackage{graphicx}
+%\usepackage{float}
+\usepackage[linecolor=colComment,linewidth=0.65pt]{mdframed}
+
+\usepackage{floatpag} % Pagina en blanco cuando aparece figuras.
+
+\DeclareGraphicsExtensions{.svg,.eps,.ps,.pdf,.png,.jpg,.jpeg}
+\addto{\captionsspanish}{\renewcommand{\listfigurename}{\bfseries\Large Figuras}}
+
+
+%----------------------------------------------------------------------------------------
+% COLORES
+\usepackage{xcolor}
+
+% Paleta 1
+\definecolor{fucsia_cronograma}{RGB}{105,45,172}
+\definecolor{naranja_cronograma}{RGB}{255,153,0}
+\definecolor{verde_cronograma}{RGB}{87,190,133}
+\definecolor{rojo_cronograma}{RGB}{216,117,117}
+\definecolor{azul_cronograma}{RGB}{51, 102, 153}
+\definecolor{gris_cronograma}{RGB}{143,145,148}
+%----------------------------------------------------------------------------------------
+% Comenzar con numeracion romana (I,II,III,IV,...)
+\renewcommand{\thepage}{\roman{page}}
+
+%----------------------------------------------------------------------------------------
+% Definir el titulo
+
+\newcommand{\nombreDelProyecto}{$\mu Search$}
+
+% Comando para multiples saltos de linea
+\newcommand{\singlelinebreak}{\\[\baselineskip]}
+\newcommand{\multiplelinebreak}[1]{\\[#1\baselineskip]}
+\newlength{\drop}
+
+\newcommand*{\titulo}{\begingroup
+\thispagestyle{empty}
+\drop = 0.13\textheight
+\centering
+\vfill
+\vspace*{\drop}
+\includegraphics[scale=0.25]{img/bitparty_big}\singlelinebreak
+{\Huge\bf BITPARTY}\multiplelinebreak{2}
+{\huge Guía de usuario para \nombreDelProyecto}\multiplelinebreak{2}
+\vfill
+\vspace*{\drop}
+\endgroup}
+
+%----------------------------------------------------------------------------------------
+% METADATOS DEL PDF Y PDF CLICKEABLE
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+
+\hypersetup{
+	pdfauthor={Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra},
+	pdftitle={E20 - Guía de usuario},
+	pdfsubject={Proyecto Software. Grado Ing. Informática. EINA. Unizar},
+	pdfkeywords={},
+	pdfcopyright={Copyright (C) 2014 by Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra. All rights reserved.},
+	pdfproducer={PDFLatex},
+	pdfcreator={ps2pdf},
+	colorlinks=false
+}
+
+\usepackage[capitalise]{cleveref} % load after hyperref package
+\crefdefaultlabelformat{\textbf{#2#1#3}} % boldface only the number
+
+\crefname{figure}{figura}{figuras}
+\Crefname{figure}{Figura}{Figuras}
+
+\crefname{listing}{algoritmo}{algoritmos}
+\Crefname{listing}{Algoritmo}{Algoritmos}
+
+\crefname{section}{sección}{secciones}
+\Crefname{section}{Sección}{Secciones}
+
+%----------------------------------------------------------------------------------------
+% FANCY HEADER
+\usepackage[head=34pt]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % borrar todos los ajustes
+
+% Configurar la cabecera: fancyhead, fancyfoot para el pie.
+\fancyhead[L]{\nouppercase\leftmark}
+\fancyhead[R]{\nouppercase\rightmark\hspace{0.5em}}
+\fancyfoot[C]{-- \thepage\ --}
+
+% Cabecera parte derecha: número y título de sección, subsección, etc.
+\renewcommand{\sectionmark}[1]{\markright{\small{{\bf \thesection} - #1}}}
+\renewcommand{\subsectionmark}[1]{\markright{\small{{\bf \thesubsection} - #1}}}
+\renewcommand{\subsubsectionmark}[1]{\markright{\small{{\bf \thesubsubsection} - #1}}}
+
+% Cabecera parte izquierda: Nombre de la empresa (logo) y nombre del proyecto
+\lhead{\raisebox{-0.5\height}{\rule[-.5ex]{0pt}{2ex}\includegraphics[scale=0.125]{img/bitparty_small}}\hspace{1em}{\large\nombreDelProyecto}}
+
+\renewcommand{\headrulewidth}{0.6pt} % Tam. separador cabecera
+\renewcommand{\footrulewidth}{0pt}   % Tam. separador pie
+\renewcommand{\headwidth}{6in}       % Anchura cabecera (incluido separador)
+
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+% INICIO DEL DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+% PORTADA: TÍTULO
+%----------------------------------------------------------------------------------------
+\begin{document}
+\titulo
+\clearpage
+
+\newpage
+
+
+%----------------------------------------------------------------------------------------
+% ÍNDICE
+%----------------------------------------------------------------------------------------	
+\tableofcontents
+\clearpage
+
+
+% Continuar con numeracion romana (1,2,3...) 
+\renewcommand{\thepage}{\arabic{page}}
+
+%----------------------------------------------------------------------------------------
+% 1. INTRODUCCIÓN
+%----------------------------------------------------------------------------------------
+\section{Introducción}
+\input{tex/01_0_introduccion}
+
+%----------------------------------------------------------------------------------------
+% 2. GUÍA PARA EL USUARIO O CLIENTE HABITUAL
+% 2.1 PÁGINA PRINCIPAL
+% 2.2 LISTADO COMPLETO DE MICROCONTROLADORES
+% 2.3 LISTADO DE RESULTADO DE BÚSQUEDA
+% 2.4 CARRITO DE COMPRA
+% 2.5 GENERACIÓN DE PEDIDO
+%----------------------------------------------------------------------------------------
+\newpage
+\section{Guía para el usuario/cliente habitual}
+\input{tex/02_0_guia_user}
+\newpage
+
+\subsection{Página principal}
+\input{tex/02_1_pagina_principal_user}
+\newpage
+
+\subsection{Listado completo de microcontroladores}
+\input{tex/02_2_listado_completo_user}
+\newpage
+
+\subsection{Listado de resultado de búsqueda}
+\input{tex/02_3_listado_busqueda_user}
+\newpage
+
+\subsection{Carrito de compra}
+\input{tex/02_4_carrito_compra}
+\newpage
+
+\subsection{Generación de pedido}
+\input{tex/02_5_generacion_pedido}
+\newpage
+
+
+%----------------------------------------------------------------------------------------
+% 3. GUÍA PARA EL ADMINISTRADOR
+% 3.1 PÁGINA PRINCIPAL
+% 3.2 LISTADO COMPLETO DE MICROCONTROLADORES
+% 3.3 LISTADO DE RESULTADO DE BÚSQUEDA
+% 3.4 AÑADIR MICROCONTROLADOR
+% 3.5 EDITAR MICROCONTROLADOR
+% 3.6 ELIMINAR MICROCONTROLADOR
+%----------------------------------------------------------------------------------------
+\section{Guía para el administrador}
+\input{tex/03_0_guia_admin}
+\newpage
+
+\subsection{Página principal}
+\input{tex/03_1_pagina_principal_admin}
+\newpage
+
+\subsection{Listado completo de microcontroladores}
+\input{tex/03_2_listado_completo_admin}
+\newpage
+
+\subsection{Listado de resultado de búsqueda}
+\input{tex/03_3_listado_busqueda_admin}
+\newpage
+
+\subsection{Añadir microcontrolador}
+\input{tex/03_4_anyadir_micro}
+\newpage
+
+\subsection{Editar microcontrolador}
+\input{tex/03_5_editar_micro}
+
+\end{document}

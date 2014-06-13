@@ -1,0 +1,71 @@
+% 04.2. PRUEBAS REALIZADAS, DEFECTOS ENCONTRADOS Y CAMBIOS Y CORRECCIONES QUE HA HABIDO
+%       QUE REALIZAR. EN ESTA SECCIÓN O EN ANEXO LOS INFORMES DE TODAS LAS PRUEBAS.
+%----------------------------------------------------------------------------------------------
+
+% Configuración margenes lista de requisitos
+\setlist[itemize]{leftmargin=0.5in,labelindent=\parindent}
+
+
+Durante el proceso de desarrollo de nuestro proyecto, los desarrolladores han ido probando que cada método que iban
+implementando cumplía sus funciones y satisfacía las precondiciones y postcondiciones para las que han sido creados.
+Sin embargo, hemos considerado que no era necesario documentar este tipo de pruebas puesto que las personas que nos 
+han encargado el proyecto no las necesitaban, tan solo las pruebas de sistema. Además, preparar y documentar debidamente
+las pruebas unitarias supone un elevadísimo coste de recursos (humanos y temporales). Por lo tanto, se puede decir que se han realizado pruebas unitarias para asegurar el correcto funcionamiento del código implementado pero no hay constancia física de ellas.
+
+Para la realización de las pruebas de sistema, nos hemos centrado en comprobar que nuestro sistema cumple las características que nos comprometimos a desarrollar antes de comenzar este proyecto, cuando conocimos las necesidades que tenía nuestro cliente y quedaron reflejadas en la propuesta del proyecto en forma de requisitos funcionales y no funcionales del sistema.
+\\[6pt]
+Las pruebas de sistema que hemos realizado han sido las siguientes:
+\begin{itemize}
+\item \vspace{0.1in} \textbf{Primera iteración}, funcionalidades de \textbf{administración}.
+	\begin{itemize}
+	\item \textbf{Comprobación de la inserción de un nuevo elemento al catálogo.} Queremos comprobar que se introduce 				correctamente un nuevo elemento al catálogo y al volver a cargar el listado de elementos disponibles aparece el nuevo elemento introducido. Desde que se realizó esta prueba por primera vez, los resultados han sido los esperados.
+	
+	\item \textbf{Comprobación de la inserción de un nuevo elemento al catálogo sin rellenar alguno de los campos.} Queremos comprobar que el sistema no nos permite introducir un elemento incompleto al catálogo, pues todos sus campos deberían ser obligatorios. La primera vez que se realizó esta prueba, el sistema sí introducía el elemento incompleto y por lo tanto fue necesario cambiar el código implicado en esta funcionalidad. Ahora, si se intenta introducir un elemento incompleto en el catálogo, aparece un mensaje informando de que todos los campos son obligatorios y el nuevo elemento no es insertado en el catálogo.	
+	
+	\item \textbf{Comprobación de la modificación de un elemento existente en el catálogo.} Queremos comprobar que el sistema permite modificar las características de un elemento existente en el catálogo. Queremos comprobar que el sistema permite modificar las características de un elemento existente en el catálogo. Para ello se ejecutan pruebas modificando sus diferentes caracterísiticas (Arquitectura, Frecuencia, Flash, RAM y Precio) de manera combinada: de dos en dos, un sólo campo, todos los campos, etc. Desde la primera vez que se ejecutó esta prueba, los resultados han sido los esperados.
+	
+	\item \textbf{Comprobación de la eliminación de un elemento existente en el catálogo.} Queremos comprobar que el sistema permite eliminar un elemento existente en el catálogo y que por lo tanto al volver a cargar el listado del catálogo, el elemento eliminado ya no aparece en el listado. Desde la primera vez que se ejecutó esta prueba, los resultados han sido los esperados.
+
+	\item \textbf{Comprobación del listado de los elementos del catálogo.} Queremos comprobar que el sistema muestra todos los elementos existentes en el catálogo, desde el primero hasta el último. Desde la primera vez que se ejecutó esta prueba, los resultados han sido los esperados.
+	\end{itemize}
+	
+\item \vspace{0.1in} \textbf{Primera iteración}, funcionalidades propias del \textbf{usuario}.
+	\begin{itemize}
+	\item \textbf{Comprobación del listado de los elementos del catálogo.} Queremos comprobar que un usuario tiene acceso al listado de todos los elementos existentes en el catálogo, desde el primero hasta el último. Desde la primera vez que se ejecutó esta prueba, los resultados han sido los esperados.
+	
+	\item \textbf{Comprobación de los datos que son solicitados al cliente para generar la factura con los elementos del carro de compra.} Queremos comprobar que los datos que son solicitados al cliente son los mismos que los que acordamos con el cliente en los requisitos funcionales del sistema. Desde la primera vez que se ejecutó esta prueba, los resultados han sido los esperados.
+
+	\item \textbf{Comprobación de la generación de la factura si el cliente no ha introducido cualquiera de los campos obligatorios.} Queremos comprobar que todos los datos requeridos al cliente deben ser introducidos para la generación de la factura. Que no permita generar la factura si hay algún campo vacío. La primera vez que se ejecutó esta prueba, el sistema sí generaba la factura aunque quedara algún campo sin completar. Por lo tanto, fue necesario modificar el código implicado en está funcionalidad, y ahora el resultado que se produce es que el sistema muestra un mensaje indicando que todos los campos son obligatorios.
+	\end{itemize}		
+	
+\item \vspace{0.1in} \textbf{Segunda iteración}, funcionalidades de \textbf{administración}.
+	\begin{itemize}
+	\item \textbf{Comprobación de la inserción de un nuevo elemento al catálogo.} Queremos comprobar que se introduce 				correctamente un nuevo elemento al catálogo y al volver a cargar el listado de elementos disponibles aparece el nuevo elemento introducido. Igual que en la primera iteración, los resultados han sido los esperados.
+
+	\item \textbf{Comprobación de la inserción de un nuevo elemento al catálogo sin rellenar alguno de los campos.} Queremos comprobar que el sistema no nos permite introducir un elemento incompleto al catálogo, pues todos sus campos deberían ser obligatorios. Como ya se corrigió durante la primera iteración, los resultados obtenidos son los esperados. 	
+
+	\item \textbf{Comprobación de la modificación de un elemento existente en el catálogo.} Queremos comprobar que el sistema permite modificar las características de un elemento existente en el catálogo. Para ello se ejecutan pruebas modificando sus diferentes caracterísiticas (Arquitectura, Frecuencia, Flash, RAM y Precio) de manera combinada: de dos en dos, un sólo campo, todos los campos, etc. Igual que en la primera iteración, los resultados han sido los esperados.
+	
+	\item \textbf{Comprobación de la eliminación de un elemento existente en el catálogo.} Queremos comprobar que el sistema permite eliminar un elemento existente en el catálogo y que por lo tanto al volver a cargar el listado del catálogo, el elemento eliminado ya no aparece en el listado. Igual que en la primera iteración, los resultados han sido los esperados.
+	
+	\item \textbf{Comprobación del listado de los elementos del catálogo.} Queremos comprobar que el sistema muestra todos los elementos existentes en el catálogo, desde el primero hasta el último. Igual que en la primera iteración, los resultados han sido los esperados.
+	
+	\item \vspace{0.5in} \textbf{Comprobación de la búsqueda exitosa de elementos del catálogo por cualquiera de los campos de búsqueda.} Queremos comprobar que el sistema es capaz de realizar búsquedas en el catálogo con cada criterio de búsqueda (Arquitectura, Frecuencia, Flash, RAM). Es decir, que devuelve como resultado el listado de todos los elementos del catálogo que cumplen el criterio de búsqueda. Los resultados obtenidos en esta prueba son los esperados.
+		
+	\item \textbf{Comprobación de la búsqueda fallida de elementos del catálogo por cualquiera de los campos de búsqueda.} Queremos comprobar que el sistema es capaz de gestionar los casos en los que las búsquedas con cada criterio de búsquda (Arquitectura, Frecuencai, Flash, RAM) no sean satisfactorias e informe al usuario de que no hay elementos en el catálogo que coincidan con su criterio de búsqueda. Los resultados obtenidos en esta prueba son los esperados.
+	\end{itemize}
+
+\item \vspace{0.1in} \textbf{Segunda iteración}, funcionalidades propias del \textbf{usuario}.
+	\begin{itemize}
+	\item \textbf{Comprobación del listado de los elementos del catálogo.} Queremos comprobar que un usuario tiene acceso al listado de todos los elementos existentes en el catálogo, desde el primero hasta el último. Igual que en la primera iteración, los resultados han sido los esperados.
+	
+	\item \textbf{Comprobación de la búsqueda exitosa de elementos del catálogo por cualquiera de los campos de búsqueda.} Queremos comprobar que el sistema es capaz de realizar búsquedas en el catálogo con cada criterio de búsqueda (Arquitectura, Frecuencia, Flash, RAM). Es decir, que devuelve como resultado el listado de todos los elementos del catálogo que cumplen el criterio de búsqueda. Los resultados obtenidos en esta prueba son los esperados.
+	
+	\item \textbf{Comprobación de la búsqueda fallida de elementos del catálogo por cualquiera de los campos de búsqueda.} Queremos comprobar que el sistema es capaz de gestionar los casos en los que las búsquedas con cada criterio de búsquda (Arquitectura, Frecuencai, Flash, RAM) no sean satisfactorias e informe al usuario de que no hay elementos en el catálogo que coincidan con su criterio de búsqueda. Los resultados obtenidos en esta prueba son los esperados.
+
+	\item \textbf{Comprobación de los datos que son solicitados al cliente para generar la factura con los elementos del carro de compra.} Queremos comprobar que los datos que son solicitados al cliente son los mismos que los que acordamos con el cliente en los requisitos funcionales del sistema. Desde la primera vez que se ejecutó esta prueba, los resultados han sido los esperados.
+	
+	\item \textbf{Comprobación de la generación de la factura si el cliente no ha introducido cualquiera de los campos obligatorios.} Queremos comprobar que todos los datos requeridos al cliente deben ser introducidos para la generación de la factura. Que no permita generar la factura si hay algún campo vacío. Como ya se corrigió durante la primera iteración, los resultados obtenidos son los esperados.
+	\end{itemize}			
+\end{itemize}
+\paragraph{}Se puede acceder en el anexo \ref{sec:informe_pruebas} al informe completo y detallado de las pruebas.

@@ -1,0 +1,243 @@
+\documentclass[10pt,spanish]{article}
+
+%----------------------------------------------------------------------------------------
+% Codificación, y usar una fuente similar a la Palatino (y no Latin Modern Roman)
+\usepackage[utf8]{inputenc} % Acentos, etc.
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel} % Castellano
+\usepackage{tgpagella}      % Fuente similar a Palatino
+
+%----------------------------------------------------------------------------------------
+% MÁRGENES (menores que en otro tipo de documentos)
+\addtolength{\oddsidemargin}{-.375in}
+\addtolength{\evensidemargin}{-.375in}
+\addtolength{\textwidth}{1.25in}
+
+%\addtolength{\topmargin}{-.375in}
+%\addtolength{\textheight}{.5in}
+
+%----------------------------------------------------------------------------------------
+% COLORES
+\usepackage{xcolor,colortbl} % Colores personalizados y color fondo tablas
+\definecolor{grisCabeceraTabla}{RGB}{220,220,220}
+\definecolor{grisHeader}{RGB}{180,180,180}
+	
+%----------------------------------------------------------------------------------------
+% TABLAS	  
+%\usepackage{supertabular} % Tablas multipágina
+\linespread {1.4} % Tamaño que ocupa una línea (celda)
+
+\usepackage{array}
+\usepackage{longtable}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength{\columnsep}{0em}
+
+% Definir los estilos de las celdas para indentar el texto
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+
+% Filas con columnas multiples
+\newcommand{\mc}[2]{\multicolumn{#1}{|C{\dimexpr 1\linewidth-2\tabcolsep}|}{#2}}
+
+% Colores de lineas de las tablas
+%\arrayrulecolor{grisCabeceraTabla}
+\arrayrulecolor{grisHeader}
+
+% Eliminar espacio previo en lista de ítems
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+% Comandos especiales para crear items dentro de tabla y poder hacer
+% una tabla de multiples paginas y que se pueda realizar el salto de
+% pagina en cualquier punto.
+\usepackage{scrextend}
+\newenvironment{lvlOneItem}
+	{\begin{addmargin}[2.5em]{1em}
+	\vspace{-1em}
+	\hspace{-1em}$\bullet$\hspace{0.5em}}
+	{\vspace{-2em}\end{addmargin}}
+\newenvironment{lvlTwoItem}
+	{\begin{addmargin}[4em]{1em}
+	\vspace{-1em}
+	\hspace{-1em}$\circ$\hspace{0.5em}}
+	{\vspace{-2em}\end{addmargin}}
+
+\newcommand{\itemNvlUno}[1]{\begin{lvlOneItem}{#1}\end{lvlOneItem}\\}
+\newcommand{\itemNvlDos}[1]{\begin{lvlTwoItem}{#1}\end{lvlTwoItem}\\}
+\newcommand{\espacioSubtabla}{\\[0.5ex]}
+\newcommand{\cabeceraTabla}[1]{\rowcolor{grisCabeceraTabla}{\bf #1}}
+
+%----------------------------------------------------------------------------------------
+% METADATOS DEL PDF Y PDF CLICKEABLE
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+
+% DATOS A CAMBIAR
+\newcommand{\numeroDeReunion}{01}
+\newcommand{\tituloReunion}{\bf Lanzamiento del equipo}
+\newcommand{\nombreDelProyecto}{$\mu$Search}
+
+\hypersetup{
+	pdfauthor={Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra},
+	pdftitle={E20 - Acta R\numeroDeReunion: \tituloReunion},
+	pdfsubject={Proyecto Software. Grado Ing. Informática. EINA. Unizar},
+	pdfkeywords={},
+	pdfcopyright={Copyright (C) 2014 by Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra. All rights reserved.},
+	pdfproducer={PDFLatex},
+	pdfcreator={ps2pdf},
+	colorlinks=false
+}
+
+%----------------------------------------------------------------------------------------
+% Encabezados y pies de pagina : FancyHdr
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % borrar todos los ajustes
+\setlength{\headheight}{15pt}
+\usepackage{lastpage} % Para poner total de paginas en el footer, ej: pag 1/4
+
+\fancyhead[L]{\color{grisHeader}\large BITPARTY}
+\fancyhead[R]{\color{grisHeader}E20 - Convocatoria R\numeroDeReunion \\ \nombreDelProyecto}
+\fancyfoot[R]{\color{grisHeader}\thepage/\pageref*{LastPage}}
+
+% Modifica el ancho de las líneas de cabecera y pie
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headsep}{0.6in}
+\renewcommand{\headwidth}{6in}
+
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+% INICIO DEL DOCUMENTO
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+	
+\begin{center}	
+\Large{Convocatoria de Reunión Nº \numeroDeReunion\hspace{0.25em}-\hspace{0.25em}\tituloReunion}
+\end{center}
+\vspace{1.5em}
+
+% PRIMERA TABLA: INFORMACIÓN BÁSICA
+\begin{longtable}{ | L{\dimexpr 0.420\linewidth-2\tabcolsep} |
+				     L{\dimexpr 0.570\linewidth-2\tabcolsep} | }
+\hline % ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}
+\mc{2}{\bf Información básica}  \\
+%\hline % ------------------------------------------------------------------------
+%{\bf Cliente} & Nombre del cliente (por definir o no es necesario ?)  \\
+\hline % ------------------------------------------------------------------------
+{\bf Proyecto} & $\mu$Search \\
+\hline % ------------------------------------------------------------------------
+{\bf Fecha y hora de reunión} & 20/02/14 - 12:00 \\
+\hline % ------------------------------------------------------------------------
+{\bf Lugar} & Seminario 21, Edif. Ada Byron. EINA. Unizar \\
+\hline % ------------------------------------------------------------------------
+{\bf Tipo de reunión} & Estándar \\
+\hline % ------------------------------------------------------------------------
+\end{longtable}
+
+
+%----------------------------------------------------------------------------------------
+% SEGUNDA TABLA - ASISTENTES
+\begin{longtable}{ | C{\dimexpr 0.070\linewidth-2\tabcolsep} |
+                     L{\dimexpr 0.350\linewidth-2\tabcolsep} |
+                     C{\dimexpr 0.370\linewidth-2\tabcolsep} |
+                     C{\dimexpr 0.200\linewidth-2\tabcolsep} | }
+\hline % ------------------------------------------------------------------------
+\rowcolor{grisCabeceraTabla}
+\mc{4}{\bf Convocados} \\
+\hline % ------------------------------------------------------------------------
+{\bf Nº} & {\bf Nombre y Apellidos} & {\bf Cargo} & {\bf Rol} \\
+\hline % ------------------------------------------------------------------------
+{\bf 1} & Alberto Berbel Aznar & Verificación y validación & --  \\
+\hline % ------------------------------------------------------------------------
+{\bf 2} & Javier Briz Alastrué & Gestor de configuraciones & --  \\
+\hline % ------------------------------------------------------------------------
+{\bf 3} & Héctor Francia Molinero & Gestor de calidad & --  \\
+\hline % ----------------------------------------------------
+{\bf 4} & Daniel García Páez & Director del proyecto & -- \\
+\hline % ------------------------------------------------------------------------
+{\bf 5} & Alejandro Gracia Mateo & Gestor de planificación & --  \\
+\hline % ------------------------------------------------------------------------
+{\bf 6} & Simón Ortego Parra & Gestor de desarrollo & Secretario  \\
+\hline % ------------------------------------------------------------------------
+{\bf 7} & Fco. Javier Zarazaga Soria & -- & Preparador  \\
+\hline % ------------------------------------------------------------------------
+\end{longtable}
+
+%----------------------------------------------------------------------------------------
+% CUARTA TABLA - PREPARACIÓN PREVIA Y AGENDA 
+\begin{longtable}{ | C{\dimexpr\linewidth-2\tabcolsep} | }
+\hline % ------------------------------------------------------------------------
+\cabeceraTabla{Preparación previa} \\
+\hline % ------------------------------------------------------------------------
+\endfirsthead
+\hline % ------------------------------------------------------------------------
+\endhead
+\espacioSubtabla
+\hline % ------------------------------------------------------------------------
+\endfoot
+
+\itemNvlUno{Leer Cap. 17 (``\emph{Being on a Team}'') del Humphrey.}
+\itemNvlUno{Leer la información sobre roles.}
+\itemNvlUno{Completar y entregar al director el formulario de información personal.} 
+\itemNvlUno{Se recopila capacidades de los miembros del equipo cara a los roles.}\\
+
+\hline % ------------------------------------------------------------------------
+\cabeceraTabla{Agenda} \\
+\hline % ------------------------------------------------------------------------
+
+\itemNvlUno{Revisar la agenda de la reunión. Asignar tiempos tentativos, asignar
+los roles de esta reunión.}
+
+\itemNvlUno{Asignación de roles.}
+	\itemNvlDos{Rol de director de proyecto (no tiene porque ser el provisional).}
+	
+\itemNvlUno{Establecer imagen de equipo.}
+	\itemNvlDos{Nombre, logotipo, imagen.}
+	\itemNvlDos{Imagen estandar en plantillas.}
+	
+\itemNvlUno{Políticas para las reuniones.}
+	\itemNvlDos{Establecer la estrategia por defecto a seguir para asignar roles
+	en las siguientes.}
+	\itemNvlDos{Consensuar las funciones de los roles para todas las reuniones.}
+	\itemNvlDos{Establecer las reglas de las reuniones del equipo.}
+	\itemNvlDos{Establecer hora y lugar estándar para las reuniones de seguimiento
+	semanales.}
+	
+\itemNvlUno{Establecer mecanismos y políticas de autoridad para situaciones conflictivas.}
+	\itemNvlDos{Toma de decisiones del equipo.}
+	\itemNvlDos{Problemas de relaciones personales.}
+	\itemNvlDos{No asistir o llegar tarde a reuniones, no cumplir con compromisos.}
+	\itemNvlDos{Detectar, valorar y premiar/castigar el buen/mal trabajo.}
+	\itemNvlDos{Detección y decisiones sobre situaciones límite (p.e. echar a uno del equipo).}
+
+\itemNvlUno{Establecer mecanismos de comunicación.}
+	\itemNvlDos{Avisos, problemas, informaciones de interés.}
+	
+\itemNvlUno{Acuerdo para que todos los miembros del equipo proporcionen los datos.}
+	\itemNvlDos{día/hora específica, medio, formatos.}
+	
+\itemNvlUno{Ruegos y preguntas.}
+
+\itemNvlUno{Resumen de la reunión o \emph{debriefing}.}
+
+\itemNvlUno{Realizar una discusión de la reunión del ejercicio.}\\
+\end{longtable}
+
+
+\end{document}

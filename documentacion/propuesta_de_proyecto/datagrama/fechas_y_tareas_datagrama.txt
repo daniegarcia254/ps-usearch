@@ -1,0 +1,44 @@
+
+DATAGRAMA
+
+	1ª ITERACIÓN
+		
+		TAREA 0: Arranque y lanzamiento del proyecto.							--> 28FEB-10MAR
+				 Instalación del sistema de trabajo, diseño inicial 
+				 de la aplicación (prototipo), base de datos...  
+		
+		TAREA 1: Implementación de una vista web básica de la aplicación
+				 para poder trabajar con ella (usuario y admin)					--> 10MAR-20MAR	------|
+																									  |---> Paralelo
+		POBLACIÓN BD															--> 10MAR-20MAR	------|
+		
+		TAREA 2: Implentación del control para 									
+				 Insertar/Modificar/Eliminar elementos							--> 20MAR-27MAR -------|
+																									   |
+		TAREA 3: Implementación del control para mostrar listado de elementos 	--> 20MAR-27MAR	-------|---> Paralelo
+		TAREA 4: Implementación del control para el carrito de compra			--> 20MAR-27MAR -------|
+		TAREA 5: Implementación del control para generar el pedido (txt)	  	--> 20MAR-27MAR	-------|
+		
+		DOCUMENTACIÓN TÉCNICA (Documentación de código y Wiki)					--> 20MAR-10ABRL
+		
+		DOCUMENTACIÓN Manual y Guias de Usuario									--> 10ABRIL-24ABRIL
+		
+		PRUEBAS																	--> 27MAR-24ABRIL
+	
+	2ª ITERACIÓN
+	
+		TAREA 6: Implementación del control para búsquedas						--> 24ABR-8MAYO
+		
+		TAREA 7: Implementación del control para generar el pedido (PDF)		--> 24ABR-8MAYO
+		
+		TAREA 8: Mejora de la implementación de la vista web de la aplicación	--> 24ABR-15MAYO
+		
+		DOCUMENTACIÓN TÉCNICA 													--> 24ABR-15MAYO
+					
+		DOCUMENTACIÓN Manual y Guias de Usuario									--> 15MAYO-26MAYO
+		
+		PRUEBAS																	--> 8MAYO-26MAYO
+		
+		CIERRE DEL PROYECTO														--> 26MAYO-2JUNIO
+		
+		

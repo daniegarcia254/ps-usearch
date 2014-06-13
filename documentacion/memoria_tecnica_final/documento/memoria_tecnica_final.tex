@@ -1,0 +1,675 @@
+\documentclass[10pt,spanish]{article}
+
+%----------------------------------------------------------------------------------------
+% Codificación, y usar una fuente similar a la Palatino (y no Latin Modern Roman)
+\usepackage[utf8]{inputenc} % Acentos, etc.
+\usepackage[spanish]{babel} % Castellano
+\usepackage[T1]{fontenc}
+\renewcommand{\rmdefault}{phv} % Arial (se parece lo suficiente)
+\renewcommand{\sfdefault}{phv} % Arial (se parece lo suficiente)
+
+%----------------------------------------------------------------------------------------
+% Margenes
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={210mm,297mm},
+    left=30mm,
+    right=30mm,
+    top=25mm,
+    bottom=25mm,
+    headheight=15mm
+}
+%----------------------------------------------------------------------------------------
+% Modificar tanto el estilo de las secciones como del indice
+\usepackage{titlesec,titletoc}
+\titleformat{\section}{\bfseries\Large\uppercase}{\thesection .}{0.8em}{}
+\titleformat{\subsection}{\bfseries\large}{\thesubsection .}{0.8em}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection .}{0.8em}{}
+
+% Secciones en una nueva pag
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection} 
+
+%----------------------------------------------------------------------------------------
+% Colores
+\usepackage{xcolor,colortbl} % Colores personalizados y color fondo tablas
+\definecolor{grisCabeceraTabla}{RGB}{220,220,220}
+\definecolor{grisHeader}{RGB}{180,180,180}
+
+%----------------------------------------------------------------------------------------
+% Imagenes
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.svg,.eps,.ps,.pdf,.png,.jpg,.jpeg}
+\addto{\captionsspanish}{\renewcommand{\listfigurename}{\bfseries\Large Figuras}}
+% \usepackage{float}
+
+% COMO MOSTRAR Y REFERENCIAR IMAGENES
+% \begin{figure}[h!]
+%    \centering
+%    \includegraphics[width=0.95\textwidth]{img/nombreImg} % Expecificar tam y que imagen mostrar
+%    \caption{Texto explicativo que aparece debajo de la imagen}
+%    \label{fig:nombreRefFigura} % nombre con el que referenciar luego, asi \cref{fig:nombreRefFigura}.
+% \end{figure}
+
+% QUE OPCIONES USAR EN IMAGENES
+% h	 Place the float here, i.e., approximately at the same point it occurs in the source 
+%    text (however, not exactly at the spot)
+% t	 Position at the top of the page.
+% b  Position at the bottom of the page.
+% p	 Put on a special page for floats only.
+% !	 Override internal parameters LaTeX uses for determining "good" float positions.
+% H	 Places the float at precisely the location in the LaTeX code. Requires the float package
+%    [1] e.g., \usepackage{float}. This is somewhat equivalent to h!.
+
+%----------------------------------------------------------------------------------------
+% FANCY HEADER
+\usepackage{fancyhdr}
+\fancyhf{} % borrar todos los ajustes
+
+% Configurar la cabecera: fancyhead, fancyfoot para el pie.
+\fancyhead[R]{\nouppercase 30243-Proyecto Software 13/14 – Equipo {\bf 20}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}    % Tam. separador cabecera
+\renewcommand{\footrulewidth}{0pt}    % Tam. separador pie
+\renewcommand{\headwidth}{6in}        % Anchura cabecera 
+
+%----------------------------------------------------------------------------------------
+% Curriculum Vitae
+\usepackage{pdfpages}
+\usepackage{currvita} 
+\setlength{\cvlabelwidth}{40mm}
+
+%----------------------------------------------------------------------------------------
+% Tablas (entre otras, las actas de las reuniones)
+\linespread {1.4} % Tamaño que ocupa una línea (celda)
+
+\usepackage{array}
+\usepackage{longtable}
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+\setlength{\columnsep}{0em}
+
+% Definir los estilos de las celdas para indentar el texto
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Filas con columnas multiples
+\newcommand{\mc}[2]{\multicolumn{#1}{|C{\dimexpr 1\linewidth-2\tabcolsep}|}{#2}}
+
+% Símbolo del euro
+\usepackage{eurosym}
+
+% Colores de lineas de las tablas
+\arrayrulecolor{grisHeader}
+
+% Eliminar espacio previo en lista de ítems
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+% Comandos especiales para crear items dentro de tabla y poder hacer
+% una tabla de multiples paginas y que se pueda realizar el salto de
+% pagina en cualquier punto.
+\usepackage{scrextend}
+\newcommand{\cabeceraTabla}[1]{\rowcolor{grisCabeceraTabla}{\bf #1}}
+\newcommand{\espacioSubtabla}{\\[0.5ex]}
+
+\newenvironment{lvlOneItem}
+	{\begin{addmargin}[2.5em]{1em}
+	\vspace{-1em}
+	\hspace{-1em}$\bullet$\hspace{0.5em}}
+	{\vspace{-2em}\end{addmargin}}
+\newenvironment{lvlTwoItem}
+	{\begin{addmargin}[4em]{1em}
+	\vspace{-1em}
+	\hspace{-1em}$\circ$\hspace{0.5em}}
+	{\vspace{-2em}\end{addmargin}}
+\newenvironment{lvlThreeItem}
+	{\begin{addmargin}[5.5em]{1em}
+	\vspace{-1em}
+	\hspace{-1em}$\blacktriangleright$\hspace{0.5em}}
+	{\vspace{-2em}\end{addmargin}}
+
+\newcommand{\itemNvlUno}[1]{\begin{lvlOneItem}{#1}\end{lvlOneItem}\\}
+\newcommand{\itemNvlDos}[1]{\begin{lvlTwoItem}{#1}\end{lvlTwoItem}\\}
+\newcommand{\itemNvlTres}[1]{\begin{lvlThreeItem}{#1}\end{lvlThreeItem}\\}
+
+%----------------------------------------------------------------------------------------
+% Definir el titulo
+\newcommand{\nombreDelProyecto}{$\mu Search$}
+
+
+\newcommand{\singlelinebreak}{\\[\baselineskip]}
+\newcommand{\multiplelinebreak}[1]{\\[#1\baselineskip]}
+\newlength{\drop}
+
+\newcommand*{\titulo}{\begingroup
+\thispagestyle{empty}
+\drop = 0.13\textheight
+\centering
+\vfill
+\vspace*{\drop}
+\includegraphics[scale=0.25]{img/bitparty_big}\singlelinebreak
+{\Huge\bf BITPARTY}\multiplelinebreak{2}
+{\huge Proyecto \nombreDelProyecto}\multiplelinebreak{2}
+{\Large Versión  1.0}\multiplelinebreak{1}
+{\Large 06/2014}\multiplelinebreak{1}
+{\em Alberto Berbel Aznar}\\
+{\em Javier Briz Alastrué}\\
+{\em Héctor Francia Molinero}\\
+{\em Daniel García Páez}\\
+{\em Alejandro Gracia Mateo}\\
+{\em Simón Ortego Parra}\multiplelinebreak{6}
+\includegraphics[scale=0.09]{img/diis_uz_big}\singlelinebreak
+\vfill
+\vspace*{\drop}
+\endgroup}
+
+%----------------------------------------------------------------------------------------
+% Metadatos y pdf clickeable
+\usepackage{hyperref}
+\usepackage{hyperxmp}
+
+\hypersetup{
+	pdfauthor={Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra},
+	pdftitle={E20 - Propuesta del proyecto},
+	pdfsubject={Proyecto Software. Grado Ing. Informática. EINA. Unizar},
+	pdfkeywords={},
+	pdfcopyright={Copyright \copyright\ 2014 
+				Alberto Berbel Aznar, 
+				Javier Briz Alastrué, 
+				Héctor Francia Molinero, 
+				Daniel García Páez,
+				Alejandro Gracia Mateo,
+				Simón Ortego Parra. All rights reserved.},
+	pdfproducer={PDFLatex},
+	pdfcreator={ps2pdf},
+	colorlinks=true,
+	linkcolor=black,        % color of internal links (change box color with linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=cyan,         % color of file links
+    urlcolor=cyan           % color of external links
+}
+
+% Redefinir el nombre de referencias a lo largo del documento
+\usepackage[capitalise]{cleveref} % IMPORTANT: load after hyperref package
+\crefdefaultlabelformat{\textbf{#2#1#3}} % boldface only the number
+
+\crefname{figure}{figura}{figuras}
+\Crefname{figure}{Figura}{Figuras}
+\crefname{listing}{algoritmo}{algoritmos}
+\Crefname{listing}{Algoritmo}{Algoritmos}
+\crefname{section}{sección}{secciones}
+\Crefname{section}{Sección}{Secciones}
+
+% Varios comandos a links relativos a otros ficheros (xls, pdf's, etc.)
+\newcommand{\hojaesfuerzos}[2]{\href{run:../../recopilacion_esfuerzos/#1.xls}{#2}}
+\newcommand{\informepruebas}[2]{\href{run:../../pruebas_de_sistema/#1.xls}{#2}}
+\newcommand{\riesgos}[2]{\href{run:../../riesgos_y_lecciones/#1.xls}{#2}}
+\newcommand{\manualUsuario}[2]{\href{run:../../manual_usuario/documento/#1.pdf}{#2}}
+\newcommand{\reuniones}[2]{\href{run:../../reuniones/#1.pdf}{#2}}
+\newcommand{\presupuesto}[2]{\href{run:../../propuesta_de_proyecto/presupuesto/#1.pdf}{#2}}
+\newcommand{\presupuestos}[2]{\href{run:../../propuesta_de_proyecto/presupuesto/#1.xls}{#2}}
+
+
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=%
+%        I N I C I O    D  E  L      D O C U M E N T O            %
+%=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=%
+
+% Comenzar sin numeracion en las paginas y sin cabeceras (de momento)
+\renewcommand{\thepage}{}
+\pagestyle{empty}
+
+%==============================================================================================
+% PORTADA
+%==============================================================================================
+
+\begin{document}
+\titulo
+\clearpage
+
+%==============================================================================================
+% ÍNDICE
+%==============================================================================================	
+\pagestyle{fancy}
+\tableofcontents
+
+%==============================================================================================
+% 01.   INTRODUCCIÓN
+% 01.1. IDENTIFICACIÓN DEL PROYECTO
+% 01.2. OBJETIVO Y ALCANCE DEL PROYECTO
+% 01.3. IDENTIFICACIÓN DEL EQUIPO QUE REALIZA EL PROYECTO
+% 01.4. BREVE DESCRIPCION DEL CONTENIDO DEL RESTO DE SECCIONES DE LA MEMORIA, INCLUYENDO ANEXOS
+%==============================================================================================
+
+% Continuar con numeracion romana (1,2,3...) 
+\renewcommand{\thepage}{\arabic{page}}
+
+% 01
+\section{Introducción}
+\input{tex/01_0_introduccion}
+
+% 01.1
+\subsection{Identificación del proyecto}
+\input{tex/01_1_identificacion_del_proyecto.tex}
+
+% 01.1
+\subsection{Objetivo y alcanze}
+\input{tex/01_2_objetivo_y_alcanze_del_proyecto.tex}
+
+% 01.1
+\subsection{Identificación del equipo}
+\input{tex/01_3_identificacion_del_equipo.tex}
+
+% 01.4
+\subsection{Descripción del contenido}
+\input{tex/01_4_descripcion_del_contenido.tex}
+
+%==============================================================================================
+% 02. REQUISITOS DEL SISTEMA
+%==============================================================================================
+
+% 02
+\section{Requisitos del sistema}
+\input{tex/02_0_requisitos_del_sistema.tex}
+
+%==============================================================================================
+% 03.   DESCRIPCIÓN TÉCNICA
+% 03.1. ASPECTOS ARQUITECTURALES Y TECNOLOGICOS
+% 03.2. MODELOS DE DATOS
+% 03.3. INFORMACIÓN DE DISEÑO DE COMPONENTES RELEVANTES DEL SISTEMA
+%==============================================================================================
+
+% 03
+\section{Descripción técnica}
+\input{tex/03_0_descripcion_tecnica.tex}
+
+% 03.1
+\subsection{Aspectos arquitecturales y tecnológicos}
+\input{tex/03_1_aspectos_arquitecturales_y_tecnologicos.tex}
+
+% 03.2
+\subsection{Modelos de datos}
+\input{tex/03_2_modelos_de_datos.tex}
+
+% 03.3
+\subsection{Diseño de los componentes}
+\input{tex/03_3_diseno_de_componentes_del_sistema.tex}
+
+%==============================================================================================
+% 04.   VERIFICACIÓN Y VALIDACIÓN DEL SISTEMA
+% 04.1. DESCRIPCIÓN DE LA METODOLOGÍA SEGUIDA PARA LA REALIZACIÓN DE LAS PRUEBAS DEL SISTEMA
+% 04.2. PRUEBAS REALIZADAS, DEFECTOS ENCONTRADOS Y CAMBIOS Y CORRECCIONES QUE HA HABIDO
+%       QUE REALIZAR. EN ESTA SECCIÓN O EN ANEXO LOS INFORMES DE TODAS LAS PRUEBAS.
+%==============================================================================================
+
+% 04
+\section{Verificación y validación}
+\input{tex/04_0_verificacion_y_validacion.tex}
+
+% 04.1
+\subsection{Metodología de pruebas}
+\input{tex/04_1_descripcion_de_metodologia_de_pruebas.tex}
+
+% 04.2
+\subsection{Pruebas. Defectos. Correcciones}
+\input{tex/04_2_pruebas_realizadas_cambios_correcciones.tex}
+
+%==============================================================================================
+% 05.   MANUALES
+% 05.1. MANUAL DE USUARIO
+% 05.1. MANUAL DE INSTALACIÓN
+%==============================================================================================
+
+% 05
+\section{Manuales}
+\input{tex/05_0_manuales.tex}
+
+% 05.1
+\subsection{Manual de usuario}
+\input{tex/05_1_manual_de_usuario.tex}
+
+% 05.2
+\subsection{Manual de instalación}
+\input{tex/05_2_manual_de_instalacion.tex}
+
+%==============================================================================================
+% 06.     GESTIÓN DEL PROYECTO
+% 06.1.   FASES Y ACTIVIDADES DEL PROYECTO
+% 06.1.1. RIESGOS
+% 06.1.2. ESTIMACIONES GLOBALES DE TAMAÑOS Y ESFUERZOS INICIALES
+% 06.1.3. CRONOGRAMAS GLOBAL INICIAL Y FINAL
+% 06.1.4. TAREAS Y ESTIMACIONES DE ESFUERZOS POR ITERACIÓN 
+% 06.1.5. FICHEROS DE ESFUERZOS INDIVIDUALES 
+% 06.1.6. ESFUERZOS REALES DE LAS TAREAS POR ITERACIÓN 
+% 06.1.7. ESFUERZOS REALES DE LAS PERSONAS Y ROLES 
+% 06.2.   PROCESOS DE SEGUIMIENTO Y CONTROL
+% 06.2.1. CALENDARIO DE LAS DISTINTAS REUNIONES CELEBRADAS
+% 06.2.2. ACTAS DE LAS DISTINTAS REUNIONES CELEBRADAS
+% 06.3.   COSTE REAL DEL PROYECTO
+%==============================================================================================
+
+% 06
+\section{Gestión del proyecto}
+\input{tex/06_0_0_gestion_del_proyecto.tex}
+
+% 06.1
+\subsection{Fases y actividades}
+\input{tex/06_1_0_fases_y_actividades_del_proyecto.tex}
+
+% 06.1.1
+\subsubsection{Riesgos}\label{subsec:riesgos}
+\input{tex/06_1_1_riesgos.tex}
+
+% 06.1.2
+\subsubsection{Estimaciones iniciales}
+\input{tex/06_1_2_estimaciones_globales_de_tamanos_y_esfuerzos_iniciales.tex}
+
+% 06.1.3
+\subsubsection{Cronogramas}
+\input{tex/06_1_3_cronogramas_global_inicial_y_final.tex}
+
+% 06.1.4
+\subsubsection{Tareas y estimación de esfuerzos}
+\input{tex/06_1_4_tareas_y_estimaciones_de_esfuerzos_por_iteracion.tex}
+
+% 06.1.5
+\subsubsection{Ficheros de esfuerzos individuales}
+\input{tex/06_1_5_ficheros_de_esfuerzos_individuales.tex}
+
+% 06.1.6
+\subsubsection{Esfuerzos reales de las tareas}\label{sec:esfuerzos_reales}
+\input{tex/06_1_6_esfuerzos_reales_de_las_tareas_por_iteracion.tex}
+
+% 06.1.7
+\subsubsection{Esfuerzos reales de las personas}
+\input{tex/06_1_7_esfuerzos_reales_de_las_personas_y_roles.tex}
+
+% 06.2
+\subsection{Procesos de seguimiento y control}
+\input{tex/06_2_0_procesos_de_seguimiento_y_control.tex}
+
+% 06.2.1
+\subsubsection{Calendario de reuniones}
+\input{tex/06_2_1_calendario_de_las_distintas_reuniones_celebradas.tex}
+
+% 06.2.2
+\subsubsection{Actas de reuniones}
+\input{tex/06_2_3_actas_de_las_distintas_reuniones_celebradas.tex}
+
+% 06.3
+\subsection{Coste}\label{subsec:coste}
+\input{tex/06_3_0_coste_real_del_proyecto.tex}
+
+%==============================================================================================
+% 07.   GESTIÓN DE CONFIGURACIONES DEL PROYECTO
+% 07.1. POLÍTICAS DE NOMBRADO
+% 07.2. CONTROL DE VERSIONES
+% 07.3. COPIAS DE SEGURIDAD
+% 07.4. ELEMENTOS DE CONFIGURACIÓN Y LINEA BASE
+%==============================================================================================
+
+% 07
+\section{Gestión de configuraciones}
+\input{tex/07_0_gestion_de_configuraciones_del_proyecto.tex}
+
+% 07.1
+\subsection{Políticas de nombrado}
+\input{tex/07_1_politicas_de_nombrado.tex}
+
+% 07.2
+\subsection{Control de versiones}
+\input{tex/07_2_control_de_versiones.tex}
+
+% 07.3
+\subsection{Copias de seguridad}
+\input{tex/07_3_copias_de_seguridad.tex}
+
+% 07.4
+\subsection{Elementos de configuración y línea base}
+\input{tex/07_4_elementos_de_configuracion_y_linea_base.tex}
+
+%==============================================================================================
+% 08.   ASEGURAMIENTO DE LA CALIDAD DEL PROYECTO
+% 08.1. ESTÁNDARES UTILIZADOS
+% 08.2. PLANIFICACIÓN DE LAS AUDITORÍAS
+% 08.3. AUDITORÍAS
+% 08.4. AUDITORÍA EXTERNA
+%==============================================================================================
+
+% 08
+\section{Aseguramiento de la calidad}
+%% Véase el~\cref{anex:Auditorias}.
+\input{tex/08_0_aseguramiento_de_la_calidad_del_proyecto.tex}
+
+% 08.1
+\subsection{Estándares utilizados}
+\input{tex/08_1_estandares_utilizados.tex}
+
+% 08.2
+\subsection{Planificación de las auditorías}
+\input{tex/08_2_planificacion_de_las_auditorias.tex}
+
+% 08.3
+\subsection{Auditorías}
+\input{tex/08_3_auditorias.tex}
+
+% 08.4
+\subsection{Auditoría externa}
+\input{tex/08_4_auditoria_externa.tex}
+
+%==============================================================================================
+% 09.   POSTMORTEM DEL PROYECTO
+% 09.1. LECCIONES APRENDIDAS
+% 09.2. PROBLEMAS ENCONTRADOS
+% 09.3. CATÁLOGO DE RIESGOS
+% 09.4. ANÁLISIS DIFERENCIAS ESFUERZOS Y TAMAÑOS REALES DEL PROYECTO VS LOS ESTIMADOS
+% 09.5. PLAN REAL VS PLANIFICACIÓN INCIAL
+% 09.6. ANÁLISIS DIFERENCIAS COSTE REAL DEL PROYECTO VS PRESUPUESTO
+%==============================================================================================
+
+% 09
+\section{Postmortem}
+\input{tex/09_0_postmortem_del_proyecto.tex}
+
+% 09.1
+\subsection{Lecciones aprendidas}
+\input{tex/09_1_lecciones_aprendidas.tex}
+
+% 09.2
+\subsection{Problemas encontrados}
+\input{tex/09_2_problemas_encontrados.tex}
+
+% 09.3
+\subsection{Catálogo de riesgos}
+\input{tex/09_3_catalogo_de_riesgos.tex}
+
+% 09.4
+\subsection{Diferencias entre los esfuerzos y tamaños reales y los estimados}
+\input{tex/09_4_analisis_esfuerzos_y_tamano_estimados_vs_reales.tex}
+
+% 09.5
+\subsection{Plan real vs planificación inicial}
+\input{tex/09_5_plan_real_vs_planificacion_inicial.tex}
+
+% 09.6
+\subsection{Diferencias entre el coste real y el presupuesto}
+\input{tex/09_6_analisis_coste_real_vs_presupuesto.tex}
+
+%==============================================================================================
+% 10. CONCLUSIONES
+% 10.1. CONCLUSIONES DEL PROYECTO
+% 10.2. IDEAS DE MEJORA DEL PROCESO
+% 10.3. IDEAS DE MEJORA DEL DESARROLLO DEL PROYECTO DENTRO DE LA ASIGNATURA
+% 10.4. VALORACIONES SUBJETIVAS PERO ARGUMENTADAS
+%==============================================================================================
+
+% 10
+\section{Conclusiones}
+\input{tex/10_0_conclusiones.tex}
+
+% 10.1
+\subsection{Conclusiones del proyecto}
+\input{tex/10_1_conclusiones_del_proyecto.tex}
+
+% 10.2
+%\subsection{Ideas de mejora del proceso}
+\input{tex/10_2_ideas_de_mejora_de_proceso.tex}
+
+% 10.3
+\subsection{Ideas de mejora del desarrollo del proyecto dentro de la asignatura}
+\input{tex/10_3_ideas_de_mejora_del_desarrollo_del_proyecto_dentro_de_asignatura.tex}
+
+% 10.4
+\subsection{Valoraciones subjetivas}
+\input{tex/10_4_valoraciones_subjetivas_argumentadas.tex}
+
+%==============================================================================================
+% ANEXOS
+\appendix
+%\addcontentsline{toc}{section}{ANEXOS}
+
+%==============================================================================================
+% A. CURRICULUMS VITAE
+% A.1. CURRICULUM VITAE: DANIEL
+% A.2. CURRICULUM VITAE: JAVIER
+% A.3. CURRICULUM VITAE: JAVIER
+% A.4. CURRICULUM VITAE: ALEJANDRO
+% A.5. CURRICULUM VITAE: ALBERTO
+% A.6. CURRICULUM VITAE: HÉCTOR
+%==============================================================================================
+
+% A
+\section{Currículums Vitae}\label{sec:cvs}
+
+% A.1
+\subsection{CV: Daniel García Páez}
+\input{tex/a_1_cv_daniel.tex}
+\newpage
+
+% A.2
+\subsection{CV: Javier Briz Alastrué}
+\input{tex/a_2_cv_javier.tex}
+\newpage
+
+% A.3
+\subsection{CV: Simón Ortego Parra}
+\input{tex/a_3_cv_simon.tex}
+\newpage
+
+% A.4
+\subsection{CV: Alejandro Gracia Mateo}
+\input{tex/a_4_cv_alejandro.tex}
+\newpage
+
+% A.5
+\subsection{CV: Alberto Berbel Aznar}
+\input{tex/a_5_cv_alberto.tex}
+\newpage
+
+% A.6
+\subsection{CV: Héctor Francia Molinero}
+\input{tex/a_6_cv_hector.tex}
+\newpage
+
+%==============================================================================================
+% B. HOJAS DE ESFUERZOS
+% B.1. HOJA DE ESFUERZOS: DANIEL
+% B.1. HOJA DE ESFUERZOS: DANIEL
+% B.2. HOJA DE ESFUERZOS: JAVIER
+% B.3. HOJA DE ESFUERZOS: SIMÓN
+% B.4. HOJA DE ESFUERZOS: ALEJANDRO
+% B.5. HOJA DE ESFUERZOS: ALBERTO
+% B.6. HOJA DE ESFUERZOS: HÉCTOR
+%==============================================================================================
+
+% B
+\section{Hojas de esfuerzos}\label{sec:hojas_esfuerzos}
+%\input{tex/b_0_hojas_de_esfuerzos.tex}
+%
+% B.1
+\subsection{Hoja de esfuerzos: Daniel García Páez}
+%\input{tex/b_1_hoja_de_esfuerzos_daniel.tex}
+En el \hojaesfuerzos{daniel_recopilacion_esfuerzos}{siguiente enlace} se puede acceder a la hoja de 
+esfuerzos de Daniel García.
+
+% B.2
+\subsection{Hoja de esfuerzos: Javier Briz Alastrué}
+%\input{tex/b_2_hoja_de_esfuerzos_javier.tex}
+En el \hojaesfuerzos{javier_recopilacion_esfuerzos}{siguiente enlace} se puede acceder a la hoja de 
+esfuerzos de Javier Briz.
+
+% B.3
+\subsection{Hoja de esfuerzos: Simón Ortego Parra}
+%\input{tex/b_3_hoja_de_esfuerzos_simon.tex}
+En el \hojaesfuerzos{simon_recopilacion_esfuerzos}{siguiente enlace} se puede acceder a la hoja de 
+esfuerzos de Simón Ortego.
+
+% B.4
+\subsection{Hoja de esfuerzos: Alejandro Gracia Mateo}
+%\input{tex/b_4_hoja_de_esfuerzos_alejandro.tex}
+En el \hojaesfuerzos{alejandro_recopilacion_esfuerzos}{siguiente enlace} se puede acceder a la hoja de 
+esfuerzos de Alejandro Gracia.
+
+% B.5
+\subsection{Hoja de esfuerzos: Alberto Berbel Aznar}
+%\input{tex/b_5_hoja_de_esfuerzos_alberto.tex}
+En el \hojaesfuerzos{alberto_recopilacion_esfuerzos}{siguiente enlace} se puede acceder a la hoja de 
+esfuerzos de Alberto Berbel.
+
+% B.6
+\subsection{Hoja de esfuerzos: Héctor Francia Molinero}
+%\input{tex/b_6_hoja_de_esfuerzos_hector.tex}
+En el \hojaesfuerzos{hector_recopilacion_esfuerzos}{siguiente enlace} se puede acceder a la hoja de 
+esfuerzos de Héctor Francia.
+
+%==============================================================================================
+% C. CRONOGRAMAS
+% C.1. CRONOGRAMA INICIAL
+% C.2. CRONOGRAMA FINAL
+%==============================================================================================
+
+% C
+\section{Cronogramas}\label{sec:cronogramas}
+
+% C.1
+\subsection{Cronograma inicial}
+%\input{tex/c_1_cronograma_inicial.tex}
+\vspace{.2cm}
+\begin{figure}[ht]
+	\centerline{\includegraphics[scale=0.80]{img/cronograma_inicial}}\
+	\caption{Cronograma inicial del proyecto}
+	\label{fig:cronogramaInicial}
+\end{figure}
+\newpage
+
+% C.2
+\subsection{Cronograma final}
+%\input{tex/c_2_cronograma_final.tex}
+\vspace{.2cm}
+\begin{figure}[ht]
+	\centerline{\includegraphics[scale=0.75]{img/cronograma_final}}\
+	\caption{Cronograma real del proyecto}
+	\label{fig:cronogramaFinal}
+\end{figure}
+
+%==============================================================================================
+% D. INFORMES DE PRUEBAS
+%----------------------------------------------------------------------------------------------
+
+% D
+\section{Informes de pruebas}\label{sec:informe_pruebas}
+\input{tex/d_0_informes_pruebas.tex}
+
+
+\end{document}
+%=-=-=-=-=-=-==-=-=-=-=-=-=%
+%     F   I   N            %
+%=-=-=-=-=-=-==-=-=-=-=-=-=%
+
