@@ -6,6 +6,7 @@
 - **agregar.php**: contains a form for adding a new micro-controller to the catalog
 - **editar.php**: contains a form for editing a micro-controller
 - **listar_todo.php**: contains a table in order to shows all the existing micro-controllers and theirs characteristics
+- - - **listar_busqueda**: contains a table in order to show all the micro-controllers as result of a searching
 - **listar_todo_editar.php**: contains a table in order to shows all the existing micro-controllers and theirs characteristics and allowing to delete or edit them.
 - **carrito.php**: contains the view for managing the shopping cart and finalize the purchase
 - **hoja_pedido.php**: contains the necessary elements in order to create the final bill for the client
