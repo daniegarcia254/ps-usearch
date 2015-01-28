@@ -1,26 +1,32 @@
-CÓDIGO FUENTE de la aplicación uSearch: catálogo electrónico para la venta de micro-controladores
+#μ-Search
 
-	La aplicación tiene dos versiones o vistas:
-			
-			- La orientada al cliente/usuario que desea comprar micro-controladores
-			
-			- La orientada al administrador para modificar la base de datos de micro-controladores
-			
+**Electronic catalog for "selling" micro-controllers**
 
-Desarrollada en PHP a partir del framework CodeIgniter.
-
-
-Estructura de directorios
+I quote the word "selling" beacause the payment process is not implemented, the catalog only allows to generate a PDF 	bill with the purchased micro-controllers.
 	
-	-	/src	- CÓDIGO FUENTE
-	-	/src/application - aplicación web basada en codeigniter
-	-	/src/img - ficheros de imagen de la web
-	-	/src/system - codeigniter
-	-	/src/style.css - hoja de estilo de la aplicación
-	
-	-	/documentacion	- DOCUMENTACIÓN PROYECTO
-	-	/documentacion/memoria_tecnica_final/documento/memoria_tecnica_final	-	MEMORIA PROYECTO
-	
+The app has two different versions:
+- One for the user/client who wants to buy micro-controllers
+- Other for the adminstrator of the catalog for modyfing the micro-controllers DB from the GUI
 
+The app functionality has been developed with PHP using the [CodeIgniter framework.](http://www.codeigniter.com/)
 
-Wiki del proyecto con más información:	https://code.google.com/p/ps-14-e20-usearch/wiki/usearch?tm=6
+------------------------------------------------------------------------------  
+------------------------------------------------------------------------------
+
+#### Important directories:
+- [/src/application/controllers](https://github.com/daniegarcia254/ps-usearch/tree/master/src/application/controllers)
+- [/src/application/models](https://github.com/daniegarcia254/ps-usearch/tree/master/src/application/models)
+- [/src/application/views](https://github.com/daniegarcia254/ps-usearch/tree/master/src/application/views)
+- [/src/application/config/database.php](https://github.com/daniegarcia254/ps-usearch/blob/master/src/application/config/database.php)
+
+------------------------------------------------------------------------------  
+------------------------------------------------------------------------------
+
+#### [Arquitecture and app documentation (Spanish)](https://github.com/daniegarcia254/ps-usearch/tree/master/documentacion)
+	
+------------------------------------------------------------------------------  
+------------------------------------------------------------------------------
+	
+You cant test the app right here:
+- [Client version](http://usearch-danie.rhcloud.com/)
+- [Admin version](http://usearch-danie.rhcloud.com/index.php/admin)
