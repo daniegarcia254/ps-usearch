@@ -1,0 +1,11 @@
+##Description of the different views of the app:
+- **home.php**: contians the main view for the client.
+- **head.php**: contains the header for all the client views. It opens the html doc and shows the title of the view and a bar-menu.
+- **adminhead.php**: contains all the admin views headers. It opens the main html doc, generates the title and provides the barmenu. It's included in all the admin views.  
+- **foot.php**: contains the footer for all the app views. It closes the html doc.
+- **agregar.php**: contains a form for adding a new micro-controller to the catalog
+- **editar.php**: contains a form for editing a micro-controller
+- **listar_todo.php**: contains a table in order to shows all the existing micro-controllers and theirs characteristics
+- **listar_todo_editar.php**: contains a table in order to shows all the existing micro-controllers and theirs characteristics and allowing to delete or edit them.
+- **carrito.php**: contains the view for managing the shopping cart and finalize the purchase
+- **hoja_pedido.php**: contains the necessary elements in order to create the final bill for the client
